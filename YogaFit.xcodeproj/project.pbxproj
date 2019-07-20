@@ -7,21 +7,102 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		441F41A620EDB5F8008054E1 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 441F41A520EDB5F8008054E1 /* View.xib */; };
+		441F41A820EDBA32008054E1 /* CustomMKPinAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F41A720EDBA32008054E1 /* CustomMKPinAnnotationView.swift */; };
+		441F41AE20EEC2D4008054E1 /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F41AD20EEC2D4008054E1 /* CircularTransition.swift */; };
+		441F41B020EEC68C008054E1 /* MessagesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F41AF20EEC68C008054E1 /* MessagesTableVC.swift */; };
+		4439F26A21B24049007D8032 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4439F26921B24049007D8032 /* EditProfileViewController.swift */; };
+		444C0C0521C8895300360ABC /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 444C0C0421C8895200360ABC /* AdSupport.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		4477D36D22017E3B0028A8F2 /* ChatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4477D36C22017E3B0028A8F2 /* ChatLogController.swift */; };
+		4490DB8F21F92B3A006112F2 /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4490DB8E21F92B3A006112F2 /* CheckInternet.swift */; };
+		4497E5E820F4522B00639101 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4497E5E720F4522B00639101 /* User.swift */; };
+		4497E5EB20F464E800639101 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4497E5EA20F464E800639101 /* Message.swift */; };
+		4497E5EE20F4664C00639101 /* ProfileTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4497E5ED20F4664C00639101 /* ProfileTableView.swift */; };
+		4497E5F020F4671F00639101 /* TableViewCellForObserveMsg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4497E5EF20F4671F00639101 /* TableViewCellForObserveMsg.swift */; };
+		4497E5F220F46C8600639101 /* ChatLogControllerProgrammatically.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4497E5F120F46C8600639101 /* ChatLogControllerProgrammatically.swift */; };
+		4497E5F420F46CD500639101 /* ChatLogControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4497E5F320F46CD500639101 /* ChatLogControllerCell.swift */; };
+		449B78E122B5EA7100CDF563 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 449B78E022B5EA7100CDF563 /* GoogleService-Info.plist */; };
+		44A6503B21EAFAFC009385E1 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44A6502F21EAFAFB009385E1 /* Roboto-Medium.ttf */; };
+		44A6503C21EAFAFC009385E1 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44A6503021EAFAFB009385E1 /* Roboto-Regular.ttf */; };
+		44A6503D21EAFAFC009385E1 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44A6503121EAFAFB009385E1 /* Roboto-MediumItalic.ttf */; };
+		44A6503E21EAFAFC009385E1 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44A6503221EAFAFB009385E1 /* Roboto-ThinItalic.ttf */; };
+		44A6503F21EAFAFC009385E1 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44A6503321EAFAFB009385E1 /* Roboto-Thin.ttf */; };
+		44A6504021EAFAFC009385E1 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44A6503421EAFAFB009385E1 /* Roboto-BlackItalic.ttf */; };
+		44A6504121EAFAFC009385E1 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44A6503521EAFAFB009385E1 /* Roboto-Bold.ttf */; };
+		44A6504221EAFAFC009385E1 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44A6503621EAFAFC009385E1 /* Roboto-Black.ttf */; };
+		44A6504321EAFAFC009385E1 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44A6503721EAFAFC009385E1 /* Roboto-Light.ttf */; };
+		44A6504421EAFAFC009385E1 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44A6503821EAFAFC009385E1 /* Roboto-Italic.ttf */; };
+		44A6504521EAFAFC009385E1 /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44A6503921EAFAFC009385E1 /* Roboto-LightItalic.ttf */; };
+		44A6504621EAFAFC009385E1 /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44A6503A21EAFAFC009385E1 /* Roboto-BoldItalic.ttf */; };
+		44A6505C21EC7399009385E1 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A6505A21EC7399009385E1 /* CardViewController.swift */; };
+		44A6505D21EC7399009385E1 /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A6505B21EC7399009385E1 /* CardViewController.xib */; };
 		44C57BF920B8DE8700DB82D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C57BF820B8DE8700DB82D7 /* AppDelegate.swift */; };
-		44C57BFB20B8DE8700DB82D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C57BFA20B8DE8700DB82D7 /* ViewController.swift */; };
 		44C57BFE20B8DE8700DB82D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44C57BFC20B8DE8700DB82D7 /* Main.storyboard */; };
 		44C57C0020B8DE8700DB82D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44C57BFF20B8DE8700DB82D7 /* Assets.xcassets */; };
 		44C57C0320B8DE8700DB82D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44C57C0120B8DE8700DB82D7 /* LaunchScreen.storyboard */; };
+		44C57C0D20B8E92E00DB82D7 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C57C0C20B8E92E00DB82D7 /* LoginController.swift */; };
+		44C57C1120B8EFD800DB82D7 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C57C1020B8EFD800DB82D7 /* Extension.swift */; };
+		44C57C1320B8F00A00DB82D7 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C57C1220B8F00A00DB82D7 /* RegisterController.swift */; };
+		44D5C2DB21FFA26E008B3FF1 /* NewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5C2DA21FFA26E008B3FF1 /* NewTableViewCell.swift */; };
+		44D5C2DD21FFA473008B3FF1 /* NewProfileTableViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5C2DC21FFA473008B3FF1 /* NewProfileTableViewVC.swift */; };
+		44E94CF721993C5D00D5892F /* Montserrat in Resources */ = {isa = PBXBuildFile; fileRef = 44E94CF621993C5D00D5892F /* Montserrat */; };
+		44E94CF921993DF200D5892F /* Roboto in Resources */ = {isa = PBXBuildFile; fileRef = 44E94CF821993DF100D5892F /* Roboto */; };
+		44FEB36820CB378100752B79 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FEB36720CB378100752B79 /* DashboardController.swift */; };
+		44FEB36A20CB3D6A00752B79 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FEB36920CB3D6A00752B79 /* Point.swift */; };
+		44FEB36C20CB434600752B79 /* AnnotationPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FEB36B20CB434600752B79 /* AnnotationPin.swift */; };
+		A556EDC1A884E540B5E92839 /* Pods_YogaFit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CBC6A72AB6094440DE81260 /* Pods_YogaFit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12C2B966AAB29227879C052A /* Pods-YogaFit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YogaFit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YogaFit/Pods-YogaFit.debug.xcconfig"; sourceTree = "<group>"; };
+		441F41A520EDB5F8008054E1 /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
+		441F41A720EDBA32008054E1 /* CustomMKPinAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMKPinAnnotationView.swift; sourceTree = "<group>"; };
+		441F41AD20EEC2D4008054E1 /* CircularTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
+		441F41AF20EEC68C008054E1 /* MessagesTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableVC.swift; sourceTree = "<group>"; };
+		4439F26921B24049007D8032 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		444C0C0421C8895200360ABC /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		4477D36C22017E3B0028A8F2 /* ChatLogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogController.swift; sourceTree = "<group>"; };
+		4490DB8E21F92B3A006112F2 /* CheckInternet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternet.swift; sourceTree = "<group>"; };
+		4497E5E720F4522B00639101 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4497E5EA20F464E800639101 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		4497E5ED20F4664C00639101 /* ProfileTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableView.swift; sourceTree = "<group>"; };
+		4497E5EF20F4671F00639101 /* TableViewCellForObserveMsg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellForObserveMsg.swift; sourceTree = "<group>"; };
+		4497E5F120F46C8600639101 /* ChatLogControllerProgrammatically.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogControllerProgrammatically.swift; sourceTree = "<group>"; };
+		4497E5F320F46CD500639101 /* ChatLogControllerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogControllerCell.swift; sourceTree = "<group>"; };
+		449B78E022B5EA7100CDF563 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		44A6502F21EAFAFB009385E1 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Medium.ttf"; path = "Roboto/Roboto-Medium.ttf"; sourceTree = SOURCE_ROOT; };
+		44A6503021EAFAFB009385E1 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "Roboto/Roboto-Regular.ttf"; sourceTree = SOURCE_ROOT; };
+		44A6503121EAFAFB009385E1 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-MediumItalic.ttf"; path = "Roboto/Roboto-MediumItalic.ttf"; sourceTree = SOURCE_ROOT; };
+		44A6503221EAFAFB009385E1 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-ThinItalic.ttf"; path = "Roboto/Roboto-ThinItalic.ttf"; sourceTree = SOURCE_ROOT; };
+		44A6503321EAFAFB009385E1 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Thin.ttf"; path = "Roboto/Roboto-Thin.ttf"; sourceTree = SOURCE_ROOT; };
+		44A6503421EAFAFB009385E1 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-BlackItalic.ttf"; path = "Roboto/Roboto-BlackItalic.ttf"; sourceTree = SOURCE_ROOT; };
+		44A6503521EAFAFB009385E1 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Bold.ttf"; path = "Roboto/Roboto-Bold.ttf"; sourceTree = SOURCE_ROOT; };
+		44A6503621EAFAFC009385E1 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Black.ttf"; path = "Roboto/Roboto-Black.ttf"; sourceTree = SOURCE_ROOT; };
+		44A6503721EAFAFC009385E1 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Light.ttf"; path = "Roboto/Roboto-Light.ttf"; sourceTree = SOURCE_ROOT; };
+		44A6503821EAFAFC009385E1 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Italic.ttf"; path = "Roboto/Roboto-Italic.ttf"; sourceTree = SOURCE_ROOT; };
+		44A6503921EAFAFC009385E1 /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-LightItalic.ttf"; path = "Roboto/Roboto-LightItalic.ttf"; sourceTree = SOURCE_ROOT; };
+		44A6503A21EAFAFC009385E1 /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-BoldItalic.ttf"; path = "Roboto/Roboto-BoldItalic.ttf"; sourceTree = SOURCE_ROOT; };
+		44A6505A21EC7399009385E1 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		44A6505B21EC7399009385E1 /* CardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
 		44C57BF520B8DE8700DB82D7 /* YogaFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YogaFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44C57BF820B8DE8700DB82D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		44C57BFA20B8DE8700DB82D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		44C57BFD20B8DE8700DB82D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		44C57BFF20B8DE8700DB82D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44C57C0220B8DE8700DB82D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44C57C0420B8DE8700DB82D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44C57C0C20B8E92E00DB82D7 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		44C57C1020B8EFD800DB82D7 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		44C57C1220B8F00A00DB82D7 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		44D5C2DA21FFA26E008B3FF1 /* NewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTableViewCell.swift; sourceTree = "<group>"; };
+		44D5C2DC21FFA473008B3FF1 /* NewProfileTableViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProfileTableViewVC.swift; sourceTree = "<group>"; };
+		44DECB2F214228B1003D0B4E /* YogaFit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YogaFit.entitlements; sourceTree = "<group>"; };
+		44E94CF621993C5D00D5892F /* Montserrat */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Montserrat; path = YogaFit/Montserrat; sourceTree = SOURCE_ROOT; };
+		44E94CF821993DF100D5892F /* Roboto */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Roboto; sourceTree = "<group>"; };
+		44FEB36720CB378100752B79 /* DashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
+		44FEB36920CB3D6A00752B79 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		44FEB36B20CB434600752B79 /* AnnotationPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationPin.swift; sourceTree = "<group>"; };
+		7C734E04098CE31E729D20BC /* Pods-YogaFit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YogaFit.release.xcconfig"; path = "Pods/Target Support Files/Pods-YogaFit/Pods-YogaFit.release.xcconfig"; sourceTree = "<group>"; };
+		9CBC6A72AB6094440DE81260 /* Pods_YogaFit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YogaFit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +110,81 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				444C0C0521C8895300360ABC /* AdSupport.framework in Frameworks */,
+				A556EDC1A884E540B5E92839 /* Pods_YogaFit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4497E5E920F464BA00639101 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				4497E5E720F4522B00639101 /* User.swift */,
+				4497E5EA20F464E800639101 /* Message.swift */,
+				44FEB36920CB3D6A00752B79 /* Point.swift */,
+				44FEB36B20CB434600752B79 /* AnnotationPin.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		4497E5EC20F4660A00639101 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				4497E5ED20F4664C00639101 /* ProfileTableView.swift */,
+				4497E5EF20F4671F00639101 /* TableViewCellForObserveMsg.swift */,
+				4497E5F120F46C8600639101 /* ChatLogControllerProgrammatically.swift */,
+				4497E5F320F46CD500639101 /* ChatLogControllerCell.swift */,
+				4477D36C22017E3B0028A8F2 /* ChatLogController.swift */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		44A6502E21EAFAE8009385E1 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				44A6503621EAFAFC009385E1 /* Roboto-Black.ttf */,
+				44A6503421EAFAFB009385E1 /* Roboto-BlackItalic.ttf */,
+				44A6503521EAFAFB009385E1 /* Roboto-Bold.ttf */,
+				44A6503A21EAFAFC009385E1 /* Roboto-BoldItalic.ttf */,
+				44A6503821EAFAFC009385E1 /* Roboto-Italic.ttf */,
+				44A6503721EAFAFC009385E1 /* Roboto-Light.ttf */,
+				44A6503921EAFAFC009385E1 /* Roboto-LightItalic.ttf */,
+				44A6502F21EAFAFB009385E1 /* Roboto-Medium.ttf */,
+				44A6503121EAFAFB009385E1 /* Roboto-MediumItalic.ttf */,
+				44A6503021EAFAFB009385E1 /* Roboto-Regular.ttf */,
+				44A6503321EAFAFB009385E1 /* Roboto-Thin.ttf */,
+				44A6503221EAFAFB009385E1 /* Roboto-ThinItalic.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		44A6505121EC68FD009385E1 /* cards */ = {
+			isa = PBXGroup;
+			children = (
+				44A6505A21EC7399009385E1 /* CardViewController.swift */,
+				44A6505B21EC7399009385E1 /* CardViewController.xib */,
+			);
+			path = cards;
+			sourceTree = "<group>";
+		};
 		44C57BEC20B8DE8700DB82D7 = {
 			isa = PBXGroup;
 			children = (
+				44A6505121EC68FD009385E1 /* cards */,
+				44A6502E21EAFAE8009385E1 /* fonts */,
+				4497E5E920F464BA00639101 /* Objects */,
+				44C57C0F20B8EFC200DB82D7 /* Helpers */,
+				44E94CF821993DF100D5892F /* Roboto */,
 				44C57BF720B8DE8700DB82D7 /* YogaFit */,
+				44D5C2D921FFA204008B3FF1 /* RedesignMessages */,
+				4497E5EC20F4660A00639101 /* Messages */,
+				44FD3BF4210062290087F671 /* Login */,
+				44C57C0E20B8E9E500DB82D7 /* Controllers */,
 				44C57BF620B8DE8700DB82D7 /* Products */,
+				99FAF9DFF30507A7CE4A932C /* Pods */,
+				DB30A3C4B99C814937A525C3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +199,74 @@
 		44C57BF720B8DE8700DB82D7 /* YogaFit */ = {
 			isa = PBXGroup;
 			children = (
+				44E94CF621993C5D00D5892F /* Montserrat */,
+				44DECB2F214228B1003D0B4E /* YogaFit.entitlements */,
 				44C57BF820B8DE8700DB82D7 /* AppDelegate.swift */,
-				44C57BFA20B8DE8700DB82D7 /* ViewController.swift */,
 				44C57BFC20B8DE8700DB82D7 /* Main.storyboard */,
 				44C57BFF20B8DE8700DB82D7 /* Assets.xcassets */,
 				44C57C0120B8DE8700DB82D7 /* LaunchScreen.storyboard */,
+				449B78E022B5EA7100CDF563 /* GoogleService-Info.plist */,
 				44C57C0420B8DE8700DB82D7 /* Info.plist */,
 			);
 			path = YogaFit;
+			sourceTree = "<group>";
+		};
+		44C57C0E20B8E9E500DB82D7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				441F41AF20EEC68C008054E1 /* MessagesTableVC.swift */,
+				44FEB36720CB378100752B79 /* DashboardController.swift */,
+				441F41A520EDB5F8008054E1 /* View.xib */,
+				441F41A720EDBA32008054E1 /* CustomMKPinAnnotationView.swift */,
+				4439F26921B24049007D8032 /* EditProfileViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		44C57C0F20B8EFC200DB82D7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				441F41AD20EEC2D4008054E1 /* CircularTransition.swift */,
+				44C57C1020B8EFD800DB82D7 /* Extension.swift */,
+				4490DB8E21F92B3A006112F2 /* CheckInternet.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		44D5C2D921FFA204008B3FF1 /* RedesignMessages */ = {
+			isa = PBXGroup;
+			children = (
+				44D5C2DA21FFA26E008B3FF1 /* NewTableViewCell.swift */,
+				44D5C2DC21FFA473008B3FF1 /* NewProfileTableViewVC.swift */,
+			);
+			path = RedesignMessages;
+			sourceTree = "<group>";
+		};
+		44FD3BF4210062290087F671 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				44C57C0C20B8E92E00DB82D7 /* LoginController.swift */,
+				44C57C1220B8F00A00DB82D7 /* RegisterController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		99FAF9DFF30507A7CE4A932C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				12C2B966AAB29227879C052A /* Pods-YogaFit.debug.xcconfig */,
+				7C734E04098CE31E729D20BC /* Pods-YogaFit.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DB30A3C4B99C814937A525C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				444C0C0421C8895200360ABC /* AdSupport.framework */,
+				9CBC6A72AB6094440DE81260 /* Pods_YogaFit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +276,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 44C57C0720B8DE8700DB82D7 /* Build configuration list for PBXNativeTarget "YogaFit" */;
 			buildPhases = (
+				92BA78A5CC81089261D0C825 /* [CP] Check Pods Manifest.lock */,
 				44C57BF120B8DE8700DB82D7 /* Sources */,
 				44C57BF220B8DE8700DB82D7 /* Frameworks */,
 				44C57BF320B8DE8700DB82D7 /* Resources */,
+				3E626948D966DFB2511993B7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -91,12 +298,23 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Eugene Zloba";
 				TargetAttributes = {
 					44C57BF420B8DE8700DB82D7 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -123,21 +341,111 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44A6504121EAFAFC009385E1 /* Roboto-Bold.ttf in Resources */,
+				449B78E122B5EA7100CDF563 /* GoogleService-Info.plist in Resources */,
+				44A6503B21EAFAFC009385E1 /* Roboto-Medium.ttf in Resources */,
+				44A6504221EAFAFC009385E1 /* Roboto-Black.ttf in Resources */,
 				44C57C0320B8DE8700DB82D7 /* LaunchScreen.storyboard in Resources */,
+				441F41A620EDB5F8008054E1 /* View.xib in Resources */,
+				44A6503E21EAFAFC009385E1 /* Roboto-ThinItalic.ttf in Resources */,
+				44A6504421EAFAFC009385E1 /* Roboto-Italic.ttf in Resources */,
+				44A6504321EAFAFC009385E1 /* Roboto-Light.ttf in Resources */,
+				44A6505D21EC7399009385E1 /* CardViewController.xib in Resources */,
+				44E94CF921993DF200D5892F /* Roboto in Resources */,
+				44A6504021EAFAFC009385E1 /* Roboto-BlackItalic.ttf in Resources */,
 				44C57C0020B8DE8700DB82D7 /* Assets.xcassets in Resources */,
+				44A6504621EAFAFC009385E1 /* Roboto-BoldItalic.ttf in Resources */,
+				44A6503D21EAFAFC009385E1 /* Roboto-MediumItalic.ttf in Resources */,
+				44A6503F21EAFAFC009385E1 /* Roboto-Thin.ttf in Resources */,
+				44A6504521EAFAFC009385E1 /* Roboto-LightItalic.ttf in Resources */,
+				44A6503C21EAFAFC009385E1 /* Roboto-Regular.ttf in Resources */,
 				44C57BFE20B8DE8700DB82D7 /* Main.storyboard in Resources */,
+				44E94CF721993C5D00D5892F /* Montserrat in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3E626948D966DFB2511993B7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YogaFit/Pods-YogaFit-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YogaFit/Pods-YogaFit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92BA78A5CC81089261D0C825 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YogaFit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		44C57BF120B8DE8700DB82D7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44C57BFB20B8DE8700DB82D7 /* ViewController.swift in Sources */,
+				4497E5EE20F4664C00639101 /* ProfileTableView.swift in Sources */,
+				44FEB36C20CB434600752B79 /* AnnotationPin.swift in Sources */,
+				441F41AE20EEC2D4008054E1 /* CircularTransition.swift in Sources */,
+				44C57C1320B8F00A00DB82D7 /* RegisterController.swift in Sources */,
+				4490DB8F21F92B3A006112F2 /* CheckInternet.swift in Sources */,
+				441F41A820EDBA32008054E1 /* CustomMKPinAnnotationView.swift in Sources */,
+				44D5C2DB21FFA26E008B3FF1 /* NewTableViewCell.swift in Sources */,
+				44C57C1120B8EFD800DB82D7 /* Extension.swift in Sources */,
+				4497E5F020F4671F00639101 /* TableViewCellForObserveMsg.swift in Sources */,
+				4439F26A21B24049007D8032 /* EditProfileViewController.swift in Sources */,
 				44C57BF920B8DE8700DB82D7 /* AppDelegate.swift in Sources */,
+				44FEB36A20CB3D6A00752B79 /* Point.swift in Sources */,
+				44D5C2DD21FFA473008B3FF1 /* NewProfileTableViewVC.swift in Sources */,
+				441F41B020EEC68C008054E1 /* MessagesTableVC.swift in Sources */,
+				44FEB36820CB378100752B79 /* DashboardController.swift in Sources */,
+				4497E5EB20F464E800639101 /* Message.swift in Sources */,
+				4477D36D22017E3B0028A8F2 /* ChatLogController.swift in Sources */,
+				4497E5F420F46CD500639101 /* ChatLogControllerCell.swift in Sources */,
+				44A6505C21EC7399009385E1 /* CardViewController.swift in Sources */,
+				4497E5F220F46C8600639101 /* ChatLogControllerProgrammatically.swift in Sources */,
+				44C57C0D20B8E92E00DB82D7 /* LoginController.swift in Sources */,
+				4497E5E820F4522B00639101 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +485,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -184,6 +493,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -234,6 +544,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -241,6 +552,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -272,31 +584,43 @@
 		};
 		44C57C0820B8DE8700DB82D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12C2B966AAB29227879C052A /* Pods-YogaFit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = YogaFit/YogaFit.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B9C7J4H4KA;
+				DEVELOPMENT_TEAM = PYXQK42C65;
 				INFOPLIST_FILE = YogaFit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.eugenezloba.YogaFit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yauhenzhloba.yogafit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		44C57C0920B8DE8700DB82D7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C734E04098CE31E729D20BC /* Pods-YogaFit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = YogaFit/YogaFit.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B9C7J4H4KA;
+				DEVELOPMENT_TEAM = PYXQK42C65;
 				INFOPLIST_FILE = YogaFit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.eugenezloba.YogaFit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yauhenzhloba.yogafit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
