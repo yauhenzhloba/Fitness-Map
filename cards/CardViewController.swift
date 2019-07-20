@@ -18,7 +18,7 @@ class CardViewController: UIViewController {
     var dashBoardViewController:DashboardController!
     
     override func viewDidLoad() {
-        slideView.layer.cornerRadius = 4
+        slideView.layer.cornerRadius = 3
         slideView.clipsToBounds = true
     }
     
