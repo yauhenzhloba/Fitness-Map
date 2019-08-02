@@ -8,10 +8,20 @@
 
 import UIKit
 import Firebase
-class RegisterController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+class RegisterController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+
+    var passwordFromFirstController: String?
+    var emailFromFirstController: String?
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var usernameLabel: UITextField!
+    
+    @IBOutlet weak var usernameIdLabel: UITextField!
+    
+    @IBOutlet weak var addPhotoButtonOutlet: UIButton!
+    
+    
     @IBOutlet weak var emailLabel: UITextField!
     @IBOutlet weak var passwordLabel: UITextField!
     @IBOutlet weak var registerBtnOut: UIButton!
@@ -26,6 +36,26 @@ class RegisterController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     @IBOutlet weak var editImageBtnOutlet: UIButton!
     
+    
+    
+    @IBAction func editPhotoAddButtonAction(_ sender: Any) {
+        
+        UIView.animate(withDuration: 0.2, animations: {
+            self.addPhotoButtonOutlet.alpha = 0.4
+        }) { (Bool) in
+            self.addPhotoButtonOutlet.alpha = 1
+        }
+        
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
+        present(picker, animated: true, completion: nil)
+        imageView.layer.borderColor = UIColor( red: CGFloat(66/255.0), green: CGFloat(45/255.0), blue: CGFloat(255/255.0), alpha: CGFloat(1.0) ).cgColor
+        editImageBtnOutlet.setTitleColor(UIColor( red: CGFloat(66/255.0), green: CGFloat(45/255.0), blue: CGFloat(255/255.0), alpha: CGFloat(1.0) ), for: .normal)
+        
+    }
+    
+    
     @IBAction func editImageBtn(_ sender: Any) {
         
         UIView.animate(withDuration: 0.2, animations: {
@@ -38,18 +68,23 @@ class RegisterController: UIViewController, UIImagePickerControllerDelegate, UIN
         picker.delegate = self
         picker.allowsEditing = true
         present(picker, animated: true, completion: nil)
+        imageView.layer.borderColor = UIColor( red: CGFloat(66/255.0), green: CGFloat(45/255.0), blue: CGFloat(255/255.0), alpha: CGFloat(1.0) ).cgColor
+        editImageBtnOutlet.setTitleColor(UIColor( red: CGFloat(66/255.0), green: CGFloat(45/255.0), blue: CGFloat(255/255.0), alpha: CGFloat(1.0) ), for: .normal)
+    
     }
     
-    @IBAction func tapImageView(_ sender: Any) {
     
+    
+    @IBAction func tapImageView(_ sender: Any) {
+        
         let picker = UIImagePickerController()
         picker.delegate = self
         picker.allowsEditing = true
         present(picker, animated: true, completion: nil)
+        imageView.layer.borderColor = UIColor( red: CGFloat(66/255.0), green: CGFloat(45/255.0), blue: CGFloat(255/255.0), alpha: CGFloat(1.0) ).cgColor
+        editImageBtnOutlet.setTitleColor(UIColor( red: CGFloat(66/255.0), green: CGFloat(45/255.0), blue: CGFloat(255/255.0), alpha: CGFloat(1.0) ), for: .normal)
         
     }
-    
-    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
@@ -63,6 +98,9 @@ class RegisterController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         if let selectedImage = selectedImageFromPicker{
             imageView.image = selectedImage
+            addPhotoButtonOutlet.alpha = 0
+            imageView.layer.borderWidth = 0
+            
         }
         
         
@@ -76,16 +114,43 @@ class RegisterController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupGradient()
+        //self.setupGradient()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         self.view.addGestureRecognizer(tap)
         setupCornerLayers()
         checkInternetConnection()
+        
+        print("PASSWORD FROM FIRST VC")
+        print(passwordFromFirstController!)
+        print(emailFromFirstController!)
+        
     }
 
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        //self.checkInternetConnection()
+        
+        if textField == self.usernameLabel {
+            // CHECK CHARACHTERS LESS THEN 30
+        }
+        
+        if textField == self.usernameIdLabel {
+            // CHECK FIREBASE USERNAME AND LESS 30
+        }
+        
+    }
+    
+    
     func setupCornerLayers(){
-        imageView.layer.cornerRadius = 30
+        
+        self.usernameLabel.resetGrayBottomBorder()
+        self.usernameIdLabel.resetGrayBottomBorder()
+        
+        imageView.layer.cornerRadius = 50
         imageView.layer.masksToBounds = true
+        imageView.layer.borderWidth = 1
+        imageView.layer.borderColor = UIColor( red: CGFloat(66/255.0), green: CGFloat(45/255.0), blue: CGFloat(255/255.0), alpha: CGFloat(1.0) ).cgColor
+        
         registerBtnOut.layer.cornerRadius = 20
         registerBtnOut.clipsToBounds = true
         blackViewOut.alpha = 0
@@ -147,6 +212,9 @@ class RegisterController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     
     @IBAction func acceptPrivatePolicyBtnAction(_ sender: Any) {
+        
+        
+        
         if CheckInternet.Connection(){
             if (self.noInternetOutlet.alpha == 1) {
                 UIView.animate(withDuration: 0.4){
@@ -161,7 +229,7 @@ class RegisterController: UIViewController, UIImagePickerControllerDelegate, UIN
             self.privatePolicyButtonOutlet.alpha = 1
         }
         
-        guard let username = usernameLabel.text, let email = emailLabel.text, let password = passwordLabel.text else{
+        guard let username = usernameLabel.text, let usernameId = usernameIdLabel.text, let email = emailFromFirstController, let password = passwordFromFirstController else{
             return
         }
         self.view.endEditing(true)
@@ -175,7 +243,7 @@ class RegisterController: UIViewController, UIImagePickerControllerDelegate, UIN
             
             if error != nil {
                 print(error!)
-                let alertController = UIAlertController(title: "Password or e-mail", message: "Error password or e-mail", preferredStyle: .alert)
+                let alertController = UIAlertController(title: "E-mail", message: "The email address is already in use by another account.", preferredStyle: .alert)
                 
                 let action = UIAlertAction(title: "Try again", style: .default) { (action:UIAlertAction) in
                     print("You've pressed default");
@@ -183,6 +251,11 @@ class RegisterController: UIViewController, UIImagePickerControllerDelegate, UIN
                 alertController.addAction(action)
                 self.present(alertController, animated: true, completion: nil)
                 self.blackViewOut.alpha = 0
+                self.view.endEditing(true)
+                self.pivatePolicyBlackView.alpha = 0
+                self.blackViewOut.alpha = 0
+                
+                
                 return
             }
             
@@ -208,7 +281,8 @@ class RegisterController: UIViewController, UIImagePickerControllerDelegate, UIN
                         }
                     
                         
-                        let values = ["username": username, "email": email, "profileImageUrl": profileImageUrl, "sex": "", "town": "", "bio": ""]
+                        //let values = ["username": username, "email": email, "profileImageUrl": profileImageUrl, "sex": "", "town": "", "bio": ""]
+                        let values = ["username": username, "usernameCode": usernameId.lowercased() ,"email": email, "profileImageUrl": profileImageUrl, "sex": "", "town": "", "bio": "", "status": "user"]
                         let ref = Database.database().reference()
                         ref.child("users").child(uid).setValue(values)
                         
@@ -225,18 +299,25 @@ class RegisterController: UIViewController, UIImagePickerControllerDelegate, UIN
                                 print(error)
                                 return
                             }
-                            let userMessageRef = Database.database().reference().child("user-messages").child(fromId).child(toId)
-                            let messageId = childRef.key
-                            userMessageRef.updateChildValues([messageId: 1])
                             
-                            let recipientUserMessagesRef = Database.database().reference().child("user-messages").child(toId).child(fromId)
-                            recipientUserMessagesRef.updateChildValues([messageId: 1])
+                            guard let messageId = childRef.key else { return }
+                            Database.database().reference().child("user-messages").child(fromId).child(toId).updateChildValues([messageId: 1])
+                            Database.database().reference().child("user-messages").child(toId).child(fromId).updateChildValues([messageId: 1])
+                            
+//                            let userMessageRef = Database.database().reference().child("user-messages").child(fromId).child(toId)
+//                            let messageId = childRef.key
+//                            print(messageId)
+//                            print("MESSAGEID")
+//                            userMessageRef.updateChildValues([messageId: 1])
+//                            
+//                            let recipientUserMessagesRef = Database.database().reference().child("user-messages").child(toId).child(fromId)
+//                            recipientUserMessagesRef.updateChildValues([messageId: 1])
                             
                             
                         }
                         
-                        // конец отправки сообщения
-                        // переключаем контроллер на основной
+                        // message sended - finish
+                        // swipe controllers
                         
                         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
                         let loginController = mainStoryboard.instantiateViewController(withIdentifier: "dashboardControllerId")
@@ -245,7 +326,7 @@ class RegisterController: UIViewController, UIImagePickerControllerDelegate, UIN
                         //show window
                         appDelegate.window?.rootViewController = loginController
                         
-                        //заокнчили переключать контроллер на соновной
+                        // finished swipe controllers
                         
                         
                     }
@@ -279,47 +360,131 @@ class RegisterController: UIViewController, UIImagePickerControllerDelegate, UIN
         }) { (Bool) in
             self.registerBtnOut.alpha = 1
         }
-
-        if (self.passwordLabel.text != "" && self.emailLabel.text != "" && self.usernameLabel.text != "") {
-            if self.passwordLabel.text == self.confirmPasswordLabel.text {
-                if (passwordLabel.text!.count >= 6 && passwordLabel.text!.count <= 16) {
-                    
-                UIView.animate(withDuration: 0.4){
-                    self.pivatePolicyBlackView.alpha = 1
-                }
-                dismissKeyboard()
-                
-            }
-            else{
-                let alertController = UIAlertController(title: "Password", message: "Create password 6-16 characters", preferredStyle: .alert)
-                
-                let action = UIAlertAction(title: "Try again", style: .default) { (action:UIAlertAction) in
-                    print("You've pressed default");
-                }
-                alertController.addAction(action)
-                self.present(alertController, animated: true, completion: nil)
-            }
+// OLD VESION
+//        if (self.passwordLabel.text != "" && self.emailLabel.text != "" && self.usernameLabel.text != "") {
+//            if self.passwordLabel.text == self.confirmPasswordLabel.text {
+//                if (passwordLabel.text!.count >= 6 && passwordLabel.text!.count <= 16) {
+//
+//                UIView.animate(withDuration: 0.4){
+//                    self.pivatePolicyBlackView.alpha = 1
+//                }
+//                dismissKeyboard()
+//
+//            }
+//            else{
+//                let alertController = UIAlertController(title: "Password", message: "Create password 6-16 characters", preferredStyle: .alert)
+//
+//                let action = UIAlertAction(title: "Try again", style: .default) { (action:UIAlertAction) in
+//                    print("You've pressed default");
+//                }
+//                alertController.addAction(action)
+//                self.present(alertController, animated: true, completion: nil)
+//            }
+//
+//
+//        } else {
+//            let alertController = UIAlertController(title: "Password", message: "Error password", preferredStyle: .alert)
+//
+//            let action = UIAlertAction(title: "Try again", style: .default) { (action:UIAlertAction) in
+//                print("You've pressed default");
+//            }
+//            alertController.addAction(action)
+//            self.present(alertController, animated: true, completion: nil)
+//        }
+//        } else {
+//
+//            emailLabel.layer.borderColor = UIColor.red.cgColor
+//            emailLabel.layer.borderWidth = 1
+//            passwordLabel.layer.borderColor = UIColor.red.cgColor
+//            passwordLabel.layer.borderWidth = 1
+//            usernameLabel.layer.borderColor = UIColor.red.cgColor
+//            usernameLabel.layer.borderWidth = 1
+//
+//        }
+            
+            // NEW VERSION
         
+            if (self.usernameIdLabel.text != "" && self.usernameLabel.text != "") {
                 
-        } else {
-            let alertController = UIAlertController(title: "Password", message: "Error password", preferredStyle: .alert)
-            
-            let action = UIAlertAction(title: "Try again", style: .default) { (action:UIAlertAction) in
-                print("You've pressed default");
+                if self.usernameLabel.text!.count <= 30 {
+                    
+                    if self.usernameIdLabel.text!.count <= 30 {
+                        
+                        if self.usernameLabel.text!.count >= 2 {
+                            
+                            if self.usernameIdLabel.text!.count >= 3 {
+                                if imageView.image != nil {
+                                    UIView.animate(withDuration: 0.4){
+                                        self.pivatePolicyBlackView.alpha = 1
+                                    }
+                                    dismissKeyboard()
+                                } else {
+                                    
+                                    imageView.layer.borderColor = UIColor.red.cgColor
+                                    editImageBtnOutlet.setTitleColor(UIColor.red, for: .normal)
+                                    
+                                }
+                                
+                                
+                            } else {
+                                //
+                                self.usernameIdLabel.text = ""
+                                self.usernameIdLabel.setRedBottomBorder()
+                                let alertController = UIAlertController(title: "@Username", message: "Minimum 3 characters.", preferredStyle: .alert)
+                                
+                                let action = UIAlertAction(title: "Try again", style: .default) { (action:UIAlertAction) in
+                                    print("You've pressed default");
+                                }
+                                alertController.addAction(action)
+                                self.present(alertController, animated: true, completion: nil)
+                            }
+                            
+                        } else {
+                            //
+                            self.usernameLabel.text = ""
+                            self.usernameLabel.setRedBottomBorder()
+                            let alertController = UIAlertController(title: "Name", message: "Minimum 2 characters.", preferredStyle: .alert)
+                            
+                            let action = UIAlertAction(title: "Try again", style: .default) { (action:UIAlertAction) in
+                                print("You've pressed default");
+                            }
+                            alertController.addAction(action)
+                            self.present(alertController, animated: true, completion: nil)
+                        }
+                        
+                    } else {
+                        //
+                        self.usernameIdLabel.text = ""
+                        self.usernameIdLabel.setRedBottomBorder()
+                        let alertController = UIAlertController(title: "@Username", message: "Enter a @username under 30 characters.", preferredStyle: .alert)
+                        
+                        let action = UIAlertAction(title: "Try again", style: .default) { (action:UIAlertAction) in
+                            print("You've pressed default");
+                        }
+                        alertController.addAction(action)
+                        self.present(alertController, animated: true, completion: nil)
+                    }
+                    
+                } else {
+                    // 
+                    self.usernameLabel.text = ""
+                    self.usernameLabel.setRedBottomBorder()
+                    let alertController = UIAlertController(title: "Name", message: "Enter a name under 30 characters.", preferredStyle: .alert)
+                    
+                    let action = UIAlertAction(title: "Try again", style: .default) { (action:UIAlertAction) in
+                    print("You've pressed default");
+                    }
+                    alertController.addAction(action)
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            } else {
+                
+                // empty just RED
+                self.usernameIdLabel.setRedBottomBorder()
+                self.usernameLabel.setRedBottomBorder()
+                
             }
-            alertController.addAction(action)
-            self.present(alertController, animated: true, completion: nil)
-        }
-        } else {
             
-            emailLabel.layer.borderColor = UIColor.red.cgColor
-            emailLabel.layer.borderWidth = 1
-            passwordLabel.layer.borderColor = UIColor.red.cgColor
-            passwordLabel.layer.borderWidth = 1
-            usernameLabel.layer.borderColor = UIColor.red.cgColor
-            usernameLabel.layer.borderWidth = 1
-            
-        }
         }else {
             if (self.noInternetOutlet.alpha == 0) {
                 UIView.animate(withDuration: 0.4){
@@ -334,4 +499,28 @@ class RegisterController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     
 
+}
+
+extension UITextField {
+    func resetGrayBottomBorder() {
+        self.borderStyle = .none
+        self.layer.backgroundColor = UIColor.white.cgColor
+        
+        self.layer.masksToBounds = false
+        self.layer.shadowColor = UIColor.lightGray.cgColor
+        self.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        self.layer.shadowOpacity = 1.0
+        self.layer.shadowRadius = 0.0
+    }
+    
+    func resetRedBottomBorder() {
+        self.borderStyle = .none
+        self.layer.backgroundColor = UIColor.white.cgColor
+        
+        self.layer.masksToBounds = false
+        self.layer.shadowColor = UIColor.red.cgColor
+        self.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        self.layer.shadowOpacity = 1.0
+        self.layer.shadowRadius = 0.0
+    }
 }

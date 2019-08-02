@@ -448,12 +448,9 @@ class ChatLogControllerProgrammatically: UICollectionViewController, UITextField
                 return
             }
             self.inputTextField.text = nil
-            let userMessageRef = Database.database().reference().child("user-messages").child(fromId!).child(toId!)
-            let messageId = childRef.key
-            userMessageRef.updateChildValues([messageId: 1])
-            
-            let recipientUserMessagesRef = Database.database().reference().child("user-messages").child(toId!).child(fromId!)
-            recipientUserMessagesRef.updateChildValues([messageId: 1])
+            guard let messageId = childRef.key else { return }
+            Database.database().reference().child("user-messages").child(fromId!).child(toId!).updateChildValues([messageId: 1])
+            Database.database().reference().child("user-messages").child(toId!).child(fromId!).updateChildValues([messageId: 1])
             
             
         }
@@ -473,12 +470,9 @@ class ChatLogControllerProgrammatically: UICollectionViewController, UITextField
                 return
             }
             self.inputTextField.text = nil
-            let userMessageRef = Database.database().reference().child("user-messages").child(fromId!).child(toId!)
-            let messageId = childRef.key
-            userMessageRef.updateChildValues([messageId: 1])
-            
-            let recipientUserMessagesRef = Database.database().reference().child("user-messages").child(toId!).child(fromId!)
-            recipientUserMessagesRef.updateChildValues([messageId: 1])
+            guard let messageId = childRef.key else { return }
+            Database.database().reference().child("user-messages").child(fromId!).child(toId!).updateChildValues([messageId: 1])
+            Database.database().reference().child("user-messages").child(toId!).child(fromId!).updateChildValues([messageId: 1])
             
             
         }

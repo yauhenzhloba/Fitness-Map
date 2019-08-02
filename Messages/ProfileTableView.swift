@@ -156,14 +156,14 @@ class ProfileTableView: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print("cellForRowAt")
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdObserve", for: indexPath) as! TableViewCellForObserveMsg
-        self.tableView.separatorStyle = .none
+        //self.tableView.separatorStyle = .none
         
         let message = self.messages[indexPath.row]
-        cell.contentViewForMessages.layer.shadowColor = UIColor.black.cgColor
-        cell.contentViewForMessages.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
-        cell.contentViewForMessages.layer.shadowOpacity = 0.4
-        cell.contentViewForMessages.layer.shadowRadius = 4.0
-        cell.contentViewForMessages.layer.cornerRadius = 7
+//        cell.contentViewForMessages.layer.shadowColor = UIColor.black.cgColor
+//        cell.contentViewForMessages.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+//        cell.contentViewForMessages.layer.shadowOpacity = 0.4
+//        cell.contentViewForMessages.layer.shadowRadius = 4.0
+//        cell.contentViewForMessages.layer.cornerRadius = 7
         
         
         
@@ -179,7 +179,7 @@ class ProfileTableView: UITableViewController {
                 
                 if let profileImageUrl = value?["profileImageUrl"] as? String {
                     
-                   cell.profileImageObserve.layer.cornerRadius = 30
+                   cell.profileImageObserve.layer.cornerRadius = 25
                     cell.profileImageObserve.clipsToBounds = true
                     cell.profileImageObserve.loadImageUsingCatchWithUrlString(urlString: profileImageUrl)
                 } else {
@@ -207,7 +207,7 @@ class ProfileTableView: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 98
+        return 74
     }
     
     

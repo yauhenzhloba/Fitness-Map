@@ -23,7 +23,7 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       self.setGradient()
+       //self.setGradient()
         
         LoginBtnPutlet.layer.cornerRadius = 20
         LoginBtnPutlet.clipsToBounds = true
@@ -98,21 +98,79 @@ class LoginController: UIViewController {
             return
         }
             
-        Auth.auth().signIn(withEmail: email, password: password){ (user, err) in
+//        Auth.auth().signIn(withEmail: email, password: password){ (user, err) in
+//            
+//            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//            let loginController = mainStoryboard.instantiateViewController(withIdentifier: "dashboardControllerId")
+//            // self.present(loginController, animated: true, completion: nil)
+//            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//            //show window
+//            appDelegate.window?.rootViewController = loginController
+//            
+//            if err != nil {
+//                print(err!)
+//                print("ERROR SING IN")
+//                return
+//            }
+//        }
             
-            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let loginController = mainStoryboard.instantiateViewController(withIdentifier: "dashboardControllerId")
-            // self.present(loginController, animated: true, completion: nil)
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            //show window
-            appDelegate.window?.rootViewController = loginController
             
-            if err != nil {
-                print(err!)
-                print("ERROR SING IN")
-                return
-            }
-        }
+            Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
+                
+                if error == nil {
+                    let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    let loginController = mainStoryboard.instantiateViewController(withIdentifier: "dashboardControllerId")
+                    // self.present(loginController, animated: true, completion: nil)
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    //show window
+                    appDelegate.window?.rootViewController = loginController
+                    
+                    print ("Firebase: Success authentication with Firebase.")
+                    
+                    self.dismiss(animated: true, completion: nil)
+                    
+                } else {
+                    
+                    if let errorCode = AuthErrorCode(rawValue: error!._code) {
+                        
+                        switch errorCode {
+                            
+                        case.wrongPassword:
+                            
+                            let alertController = UIAlertController(title: "Password", message: "You entered an invalid password.", preferredStyle: .alert)
+                            
+                            let action = UIAlertAction(title: "Try again", style: .default) { (action:UIAlertAction) in
+                                print("You've pressed default");
+                            }
+                            alertController.addAction(action)
+                            self.present(alertController, animated: true, completion: nil)
+                            
+                            
+                        case.userNotFound:
+                            
+                            let alertController = UIAlertController(title: "E-mail", message: "You entered an invalid email.", preferredStyle: .alert)
+                            
+                            let action = UIAlertAction(title: "Try again", style: .default) { (action:UIAlertAction) in
+                                print("You've pressed default");
+                            }
+                            alertController.addAction(action)
+                            self.present(alertController, animated: true, completion: nil)
+                            
+                        default:
+                            let alertController = UIAlertController(title: "Oops!", message: "Something wrong!.", preferredStyle: .alert)
+                            
+                            let action = UIAlertAction(title: "Try again", style: .default) { (action:UIAlertAction) in
+                                print("You've pressed default");
+                            }
+                            alertController.addAction(action)
+                            self.present(alertController, animated: true, completion: nil)
+                            print("Creating user error \(error.debugDescription)!")
+                        }
+                    }
+                }
+            })
+            
+            
         }else{
             if (self.internetOutlet.alpha == 0) {
                 UIView.animate(withDuration: 0.4){

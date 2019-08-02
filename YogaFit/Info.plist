@@ -42,6 +42,8 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Roboto-Black.ttf</string>
+		<string>Montserrat-Black.ttf</string>
+		<string>OpenSans-Bold.ttf</string>
 	</array>
 	<key>UIBackgroundModes</key>
 	<array>

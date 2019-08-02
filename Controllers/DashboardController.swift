@@ -339,10 +339,8 @@ class DashboardController: UIViewController, MKMapViewDelegate, CLLocationManage
        super.viewDidLoad()
         self.checkIfUserIsLoggedIn()
         
-        //FCM Token
-        let uid = Auth.auth().currentUser?.uid
-        Database.database().reference().child("FcmTokens").child(uid!).setValue(["Token": Messaging.messaging().fcmToken!])
-        //
+        
+        
         
         viewMenuBar.alpha = 1
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
@@ -356,7 +354,7 @@ class DashboardController: UIViewController, MKMapViewDelegate, CLLocationManage
         mappin4.layer.masksToBounds = false
         setupCard2()
         setupCard()
-        self.setGradientForViews()
+        //self.setGradientForViews()
     }
     
     @objc func dismissKeyboard() {
@@ -956,6 +954,26 @@ class DashboardController: UIViewController, MKMapViewDelegate, CLLocationManage
         
     }
     
+    var FcmTimer = Timer()
+    func runFcmTimer(){
+        self.FcmTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateTimer(){
+        //FCM Token
+        let uid = Auth.auth().currentUser?.uid
+        let token = Messaging.messaging().fcmToken
+        print(token)
+        if token != nil {
+            Database.database().reference().child("fcmTokens").child(uid!).setValue(["token": token!])
+        } else {
+            print("Token Error")
+        }
+        self.FcmTimer.invalidate()
+        //
+    
+    }
+    
     func checkIfUserIsLoggedIn() {
         print("Current User:")
         print(Auth.auth().currentUser)
@@ -966,6 +984,9 @@ class DashboardController: UIViewController, MKMapViewDelegate, CLLocationManage
         } else {
             print(Auth.auth().currentUser?.uid)
                     print("LOGIN")
+            
+            
+                    self.runFcmTimer()
                     self.showMyLocation()
                     self.loadPoints()
                     self.setCornerLayers()
@@ -992,11 +1013,7 @@ class DashboardController: UIViewController, MKMapViewDelegate, CLLocationManage
         }
     }
     
-    func postToke(Token : [String: AnyObject]){
-        
-        // check if token already here
-        
-    }
+ 
     
     @IBOutlet weak var hamburgerBtnOutl: UIButton!
     
@@ -1269,17 +1286,41 @@ class DashboardController: UIViewController, MKMapViewDelegate, CLLocationManage
             if error != nil {
                 print(error)
                 return
+        
             }
-           // self.inputTextField.text = nil
-            let userMessageRef = Database.database().reference().child("user-messages").child(fromId!).child(toId!)
-            let messageId = childRef.key
-            userMessageRef.updateChildValues([messageId: 1])
             
-            let recipientUserMessagesRef = Database.database().reference().child("user-messages").child(toId!).child(fromId!)
-            recipientUserMessagesRef.updateChildValues([messageId: 1])
-            self.showMessageConroller()
             
+            guard let messageId = childRef.key else { return }
+            Database.database().reference().child("user-messages").child(fromId!).child(toId!).updateChildValues([messageId: 1])
+            Database.database().reference().child("user-messages").child(toId!).child(fromId!).updateChildValues([messageId: 1])
+//                let userMessageRef = Database.database().reference().child("user-messages").child(fromId!).child(toId!)
+//                let messageId = childRef.key
+//                print(messageId)
+//                print("MESSAGEID")
+//            userMessageRef.updateChildValues([messageId: 1]){ (error, ref) in
+//                if error != nil {
+//                    print(error)
+//                    return
+//
+//                }}
+            
+//                let recipientUserMessagesRef = Database.database().reference().child("user-messages").child(toId!).child(fromId!)
+//            recipientUserMessagesRef.updateChildValues([messageId: 1]){ (error, ref) in
+//                if error != nil {
+//                    print(error)
+//                    return
+//
+//                }}
+                print(messageId)
+                print("MESSAGEID")
+                self.showMessageConroller()
+                
+            
+           
+        
         }
+        
+        
         
     }
 // PROFILE VIEW
@@ -1479,9 +1520,9 @@ class DashboardController: UIViewController, MKMapViewDelegate, CLLocationManage
     @IBOutlet weak var pickerView: UIPickerView!
     var pickerData: [String] = [String]()
     let pickerDataType = ["Run", "Workout", "Yoga", "Bike", "Tennis"]
-     let pickerDataLevel = ["Low", "Mid", "Pro"]
+     let pickerDataLevel = ["Beginner", "Advanced", "Expert"]
      let pickerDataTime = ["5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM" ,"5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11AM", "12PM", "1AM", "2AM"]
-     let pickerDataInterval = ["10 Min.", "15 Min.", "30 Min.", "45 Min.", "60 Min."]
+     let pickerDataInterval = ["10 Min.", "15 Min.", "30 Min.", "45 Min.", "60 Min.","1.5 Hr.", "2 Hrs."]
     
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
