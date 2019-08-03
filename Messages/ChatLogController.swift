@@ -17,7 +17,8 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate, UIColl
         textField.placeholder = "Type a message..."
         textField.translatesAutoresizingMaskIntoConstraints = false
         
-        textField.font = UIFont(name: "Roboto-Black.ttf", size: 17)
+        //textField.font = UIFont(name: "Roboto-Black.ttf", size: 17)
+        textField.font = UIFont(name: "OpenSans-Regular.ttf", size: 17)
         textField.delegate = self
         return textField
     }()
@@ -25,7 +26,7 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate, UIColl
     lazy var sendButton: UIButton = {
         let sb = UIButton()
         sb.translatesAutoresizingMaskIntoConstraints = false
-        sb.titleLabel?.font = UIFont(name: "Roboto-Black.ttf", size: 17)
+        sb.titleLabel?.font = UIFont(name: "OpenSans-Regular.ttf", size: 17)
         return sb
     }()
     
@@ -74,11 +75,39 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate, UIColl
         setupKeyboardObservers()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         //let button = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.stop, target: self, action: #selector(dismissChat))
-//        let button = UIBarButtonItem(image: UIImage(named: "backArrowIconWhite48"), style: .plain, target: self, action: #selector(dismissChat))
-//        navigationItem.leftBarButtonItem = button
+        let button = UIBarButtonItem(image: UIImage(named: "backArrowIconWhite48"), style: .plain, target: self, action: #selector(dismissChat))
+        navigationItem.leftBarButtonItem = button
         self.view.addGestureRecognizer(tap)
         
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "Open Sans", size: 17)!]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action: #selector(self.navigationBarTapped(_:)))
+        self.navigationController?.navigationBar.addGestureRecognizer(tapGestureRecognizer)
+        //self.navigationController?.navigationBar.alpha
         
+    }
+    
+    @objc func navigationBarTapped(_ sender: UITapGestureRecognizer){
+//        UIView.animate(withDuration: 0.2, animations: {
+//            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.lightGray]
+//        }) { (Bool) in
+//            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+//        }
+        //self.navigationController?.navigationBar.alpha
+        
+        print(self.userFromSegue.id)
+        
+        print("Navigation bar tapped")
+        
+        guard let vc: ProfileViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "profileController") as? ProfileViewController else {
+            
+            print("View controller could not be instantiated")
+            return
+        }
+        
+        vc.self.transferUid = self.userFromSegue.id!
+        
+        present(vc, animated: true, completion: nil)
         
     }
     
@@ -366,7 +395,9 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate, UIColl
         if let text = message.text{
             cell.textView.isHidden = false
             cell.bubbleWidthAnchor?.constant = estimateFrameForText(text: text).width + 32
-            cell.textView.font = UIFont(name: "Helvetica Neue", size: 15)
+            //cell.textView.font = UIFont(name: "Helvetica Neue", size: 15)
+            cell.textView.font = UIFont(name: "Open Sans", size: 15)
+            //Open Sans
             
 
         }else if message.imageUrl != nil {
@@ -437,7 +468,8 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate, UIColl
         let size = CGSize(width: 200, height: 1000)
         let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
         
-        let font = UIFont(name: "Helvetica Neue", size: 15)
+       //let font = UIFont(name: "Helvetica Neue", size: 15)
+        let font = UIFont(name: "Open Sans", size: 15)
         return NSString(string: text).boundingRect(with: size, options: options, attributes: [.font: font], context: nil)
     }
     
@@ -460,13 +492,9 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate, UIColl
                 return
             }
             self.inputTextField.text = nil
-            let userMessageRef = Database.database().reference().child("user-messages").child(fromId!).child(toId!)
-            let messageId = childRef.key
-            userMessageRef.updateChildValues([messageId: 1])
-            
-            let recipientUserMessagesRef = Database.database().reference().child("user-messages").child(toId!).child(fromId!)
-            recipientUserMessagesRef.updateChildValues([messageId: 1])
-            
+            guard let messageId = childRef.key else { return }
+            Database.database().reference().child("user-messages").child(fromId!).child(toId!).updateChildValues([messageId: 1])
+            Database.database().reference().child("user-messages").child(toId!).child(fromId!).updateChildValues([messageId: 1])
             
         }
         UIView.animate(withDuration: 0.2, animations: {
@@ -492,12 +520,9 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate, UIColl
                 return
             }
             self.inputTextField.text = nil
-            let userMessageRef = Database.database().reference().child("user-messages").child(fromId!).child(toId!)
-            let messageId = childRef.key
-            userMessageRef.updateChildValues([messageId: 1])
-            
-            let recipientUserMessagesRef = Database.database().reference().child("user-messages").child(toId!).child(fromId!)
-            recipientUserMessagesRef.updateChildValues([messageId: 1])
+            guard let messageId = childRef.key else { return }
+            Database.database().reference().child("user-messages").child(fromId!).child(toId!).updateChildValues([messageId: 1])
+            Database.database().reference().child("user-messages").child(toId!).child(fromId!).updateChildValues([messageId: 1])
             
             
         }

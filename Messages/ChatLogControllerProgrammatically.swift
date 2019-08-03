@@ -470,6 +470,7 @@ class ChatLogControllerProgrammatically: UICollectionViewController, UITextField
                 return
             }
             self.inputTextField.text = nil
+            
             guard let messageId = childRef.key else { return }
             Database.database().reference().child("user-messages").child(fromId!).child(toId!).updateChildValues([messageId: 1])
             Database.database().reference().child("user-messages").child(toId!).child(fromId!).updateChildValues([messageId: 1])

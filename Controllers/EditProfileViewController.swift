@@ -21,6 +21,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var townField: UITextField!
     @IBOutlet weak var bioField: UITextView!
     
+    @IBOutlet weak var logOutButtonOutlet: UIButton!
+    
     
     
     //"username": username, "email": email, "profileImageUrl": profileImageUrl, "sex": "0", "town": "0", "bio": "0"
@@ -85,6 +87,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
             self.btnSaveOutlet.isEnabled = true
             self.btnCancelOutlet.isEnabled = true
         
+        self.logOutButtonOutlet.layer.cornerRadius = 12
     }
     
     func loadUserInFields(){
@@ -311,6 +314,50 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         let contentInset:UIEdgeInsets = UIEdgeInsets.zero
         scrollView.contentInset = contentInset
     }
+    
+    
+    
+    @IBAction func logOutButtonAction(_ sender: Any) {
+        
+        UIView.animate(withDuration: 0.2, animations: {
+            self.logOutButtonOutlet.alpha = 0.4
+        }) { (Bool) in
+            self.logOutButtonOutlet.alpha = 1
+        }
+        
+        let alertController = UIAlertController(title: "Sign out", message: "You sure you want to logout?", preferredStyle: UIAlertControllerStyle.alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
+            print("Cancel")
+        }
+        let okAction = UIAlertAction(title: "Log Out", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+            self.handleLogout()
+        }
+        alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+        
+        //handleLogout()
+        
+    }
+    
+    func handleLogout(){
+        print("HANDLE LOGOUT START")
+        do {
+            try Auth.auth().signOut()
+        } catch let logoutError {
+            print(logoutError)
+        }
+        
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginController = mainStoryboard.instantiateViewController(withIdentifier: "loginControllerId")
+        // self.present(loginController, animated: true, completion: nil)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        //show window
+        appDelegate.window?.rootViewController = loginController
+        print("HANDLE LOGOUT END")
+    }
+    
+    
     
 //END
 

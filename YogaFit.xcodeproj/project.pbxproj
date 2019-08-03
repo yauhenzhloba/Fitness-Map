@@ -14,6 +14,7 @@
 		4439F26A21B24049007D8032 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4439F26921B24049007D8032 /* EditProfileViewController.swift */; };
 		444C0C0521C8895300360ABC /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 444C0C0421C8895200360ABC /* AdSupport.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		4477D36D22017E3B0028A8F2 /* ChatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4477D36C22017E3B0028A8F2 /* ChatLogController.swift */; };
+		4482503622F3FC1300D7B00E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4482503522F3FC1300D7B00E /* ProfileViewController.swift */; };
 		4490DB8F21F92B3A006112F2 /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4490DB8E21F92B3A006112F2 /* CheckInternet.swift */; };
 		4497E5E820F4522B00639101 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4497E5E720F4522B00639101 /* User.swift */; };
 		4497E5EB20F464E800639101 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4497E5EA20F464E800639101 /* Message.swift */; };
@@ -91,6 +92,7 @@
 		4439F26921B24049007D8032 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		444C0C0421C8895200360ABC /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		4477D36C22017E3B0028A8F2 /* ChatLogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogController.swift; sourceTree = "<group>"; };
+		4482503522F3FC1300D7B00E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Controllers/ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
 		4490DB8E21F92B3A006112F2 /* CheckInternet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternet.swift; sourceTree = "<group>"; };
 		4497E5E720F4522B00639101 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4497E5EA20F464E800639101 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 		44C57C0E20B8E9E500DB82D7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4482503522F3FC1300D7B00E /* ProfileViewController.swift */,
 				441F41AF20EEC68C008054E1 /* MessagesTableVC.swift */,
 				44FEB36720CB378100752B79 /* DashboardController.swift */,
 				441F41A520EDB5F8008054E1 /* View.xib */,
@@ -547,6 +550,7 @@
 				44C57C1320B8F00A00DB82D7 /* RegisterController.swift in Sources */,
 				4490DB8F21F92B3A006112F2 /* CheckInternet.swift in Sources */,
 				44C2F39C22F0631200ABF6F9 /* FirstRegisterController.swift in Sources */,
+				4482503622F3FC1300D7B00E /* ProfileViewController.swift in Sources */,
 				441F41A820EDBA32008054E1 /* CustomMKPinAnnotationView.swift in Sources */,
 				44D5C2DB21FFA26E008B3FF1 /* NewTableViewCell.swift in Sources */,
 				44C57C1120B8EFD800DB82D7 /* Extension.swift in Sources */,

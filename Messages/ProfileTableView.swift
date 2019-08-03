@@ -27,6 +27,9 @@ class ProfileTableView: UITableViewController {
         self.observeUserMessages()
         self.gradientForNavigationBar()
         
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "Open Sans", size: 17)!]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        
     }
 //    override var preferredStatusBarStyle: UIStatusBarStyle {
 //        return .lightContent

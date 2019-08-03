@@ -1029,13 +1029,26 @@ class DashboardController: UIViewController, MKMapViewDelegate, CLLocationManage
             self.profileImageOutlet.alpha = 1
         }
         
-        UIView.animate(withDuration: 0.4){
-            self.mainViewProfileViewOut.alpha = 1
+//        UIView.animate(withDuration: 0.4){
+//            self.mainViewProfileViewOut.alpha = 1
+//        }
+        
+//        UIView.animate(withDuration: 0.4){
+//            self.viewMenuBar.alpha = 0
+//        }
+        
+        // open profile View
+        
+        guard let vc: ProfileViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "profileController") as? ProfileViewController else {
+            
+            print("View controller could not be instantiated")
+            return
         }
         
-        UIView.animate(withDuration: 0.4){
-            self.viewMenuBar.alpha = 0
-        }
+        vc.self.transferUid = Auth.auth().currentUser!.uid
+        
+        present(vc, animated: true, completion: nil)
+        
         
     }
     
