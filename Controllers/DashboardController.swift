@@ -338,7 +338,7 @@ class DashboardController: UIViewController, MKMapViewDelegate, CLLocationManage
     override func viewDidLoad() {
        super.viewDidLoad()
         self.checkIfUserIsLoggedIn()
-        
+        //self.updateUserVisit()
         
         
         
@@ -355,6 +355,60 @@ class DashboardController: UIViewController, MKMapViewDelegate, CLLocationManage
         setupCard2()
         setupCard()
         //self.setGradientForViews()
+    }
+    
+   
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.updateUserVisit()
+    }
+    
+    func updateUserVisit(){
+        let uid = Auth.auth().currentUser?.uid
+        let timestamp: NSNumber = (Date().timeIntervalSince1970) as NSNumber
+        Database.database().reference().child("users").child(uid!).updateChildValues(["lastVisit": timestamp])
+        
+        
+        
+        //let username = ""
+        
+        Database.database().reference().child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+            print("func check usernameCode")
+            print(snapshot)
+            if let value = snapshot.value as? [String: AnyObject]  {
+                
+                
+                if let checkUsernameCode = value["usernameCode"] as? String {
+                    print("usernameCode::")
+                    
+                    
+                    
+                } else {
+                    print("usernameCode:: Not Found")
+                    //putchildUID
+                    let newUsernameCode =  Database.database().reference().child("usernames").child(uid!).childByAutoId().key
+                    //newUsernameCode = "support"
+                    //newUsernameCode.setValue(["1":"1"])
+                    Database.database().reference().child("users").child(uid!).updateChildValues(["usernameCode": newUsernameCode])
+                    Database.database().reference().child("usernames").child(newUsernameCode!).updateChildValues(["user": uid])
+                    
+                }
+                
+                
+                
+                
+            }
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
+        
+        //let username = "username"
+        
+        //Database.database().reference().child("usernames").child(uid!).child("username").setValue(["1":"1"])
+        
+        
     }
     
     @objc func dismissKeyboard() {

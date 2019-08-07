@@ -12,9 +12,9 @@
 		441F41AE20EEC2D4008054E1 /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F41AD20EEC2D4008054E1 /* CircularTransition.swift */; };
 		441F41B020EEC68C008054E1 /* MessagesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F41AF20EEC68C008054E1 /* MessagesTableVC.swift */; };
 		4439F26A21B24049007D8032 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4439F26921B24049007D8032 /* EditProfileViewController.swift */; };
+		443AA4DD22F6993500A0ED23 /* SettingsTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443AA4DC22F6993500A0ED23 /* SettingsTeamViewController.swift */; };
 		444C0C0521C8895300360ABC /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 444C0C0421C8895200360ABC /* AdSupport.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		4477D36D22017E3B0028A8F2 /* ChatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4477D36C22017E3B0028A8F2 /* ChatLogController.swift */; };
-		4482503622F3FC1300D7B00E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4482503522F3FC1300D7B00E /* ProfileViewController.swift */; };
 		4490DB8F21F92B3A006112F2 /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4490DB8E21F92B3A006112F2 /* CheckInternet.swift */; };
 		4497E5E820F4522B00639101 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4497E5E720F4522B00639101 /* User.swift */; };
 		4497E5EB20F464E800639101 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4497E5EA20F464E800639101 /* Message.swift */; };
@@ -37,6 +37,11 @@
 		44A6504621EAFAFC009385E1 /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44A6503A21EAFAFC009385E1 /* Roboto-BoldItalic.ttf */; };
 		44A6505C21EC7399009385E1 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A6505A21EC7399009385E1 /* CardViewController.swift */; };
 		44A6505D21EC7399009385E1 /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A6505B21EC7399009385E1 /* CardViewController.xib */; };
+		44AA4DAB22F74DBF00DC29A5 /* ChangeTeamTagVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA4DAA22F74DBF00DC29A5 /* ChangeTeamTagVC.swift */; };
+		44AD3E5322F59FB0008A8BFB /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AD3E5222F59FB0008A8BFB /* MainTabBarViewController.swift */; };
+		44AD3E5522F5ABDE008A8BFB /* FirstAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AD3E5422F5ABDE008A8BFB /* FirstAnimationViewController.swift */; };
+		44AD3E5722F5B089008A8BFB /* TeamDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AD3E5622F5B089008A8BFB /* TeamDashboardViewController.swift */; };
+		44AD3E5D22F5B6D7008A8BFB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AD3E5C22F5B6D6008A8BFB /* ProfileViewController.swift */; };
 		44C026D422F0464D00A1A99C /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44C026C322F0462E00A1A99C /* Montserrat-Black.ttf */; };
 		44C026D522F0465400A1A99C /* Montserrat-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44C026C722F0462F00A1A99C /* Montserrat-BlackItalic.ttf */; };
 		44C026D622F0465400A1A99C /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44C026C522F0462E00A1A99C /* Montserrat-Bold.ttf */; };
@@ -77,6 +82,7 @@
 		44D5C2DD21FFA473008B3FF1 /* NewProfileTableViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5C2DC21FFA473008B3FF1 /* NewProfileTableViewVC.swift */; };
 		44E94CF721993C5D00D5892F /* Montserrat in Resources */ = {isa = PBXBuildFile; fileRef = 44E94CF621993C5D00D5892F /* Montserrat */; };
 		44E94CF921993DF200D5892F /* Roboto in Resources */ = {isa = PBXBuildFile; fileRef = 44E94CF821993DF100D5892F /* Roboto */; };
+		44F1F7B222F7EE53006F8778 /* SearchUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F1F7B122F7EE53006F8778 /* SearchUserViewController.swift */; };
 		44FEB36820CB378100752B79 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FEB36720CB378100752B79 /* DashboardController.swift */; };
 		44FEB36A20CB3D6A00752B79 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FEB36920CB3D6A00752B79 /* Point.swift */; };
 		44FEB36C20CB434600752B79 /* AnnotationPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FEB36B20CB434600752B79 /* AnnotationPin.swift */; };
@@ -90,9 +96,9 @@
 		441F41AD20EEC2D4008054E1 /* CircularTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
 		441F41AF20EEC68C008054E1 /* MessagesTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableVC.swift; sourceTree = "<group>"; };
 		4439F26921B24049007D8032 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		443AA4DC22F6993500A0ED23 /* SettingsTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTeamViewController.swift; sourceTree = "<group>"; };
 		444C0C0421C8895200360ABC /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		4477D36C22017E3B0028A8F2 /* ChatLogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogController.swift; sourceTree = "<group>"; };
-		4482503522F3FC1300D7B00E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Controllers/ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
 		4490DB8E21F92B3A006112F2 /* CheckInternet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternet.swift; sourceTree = "<group>"; };
 		4497E5E720F4522B00639101 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4497E5EA20F464E800639101 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -115,6 +121,11 @@
 		44A6503A21EAFAFC009385E1 /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-BoldItalic.ttf"; path = "Roboto/Roboto-BoldItalic.ttf"; sourceTree = SOURCE_ROOT; };
 		44A6505A21EC7399009385E1 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		44A6505B21EC7399009385E1 /* CardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
+		44AA4DAA22F74DBF00DC29A5 /* ChangeTeamTagVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeTeamTagVC.swift; sourceTree = "<group>"; };
+		44AD3E5222F59FB0008A8BFB /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		44AD3E5422F5ABDE008A8BFB /* FirstAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirstAnimationViewController.swift; path = ../Controllers/FirstAnimationViewController.swift; sourceTree = "<group>"; };
+		44AD3E5622F5B089008A8BFB /* TeamDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDashboardViewController.swift; sourceTree = "<group>"; };
+		44AD3E5C22F5B6D6008A8BFB /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		44C026B822F0462D00A1A99C /* Montserrat-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-LightItalic.ttf"; sourceTree = "<group>"; };
 		44C026B922F0462D00A1A99C /* Montserrat-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		44C026BA22F0462D00A1A99C /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
@@ -158,6 +169,7 @@
 		44DECB2F214228B1003D0B4E /* YogaFit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YogaFit.entitlements; sourceTree = "<group>"; };
 		44E94CF621993C5D00D5892F /* Montserrat */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Montserrat; path = YogaFit/Montserrat; sourceTree = SOURCE_ROOT; };
 		44E94CF821993DF100D5892F /* Roboto */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Roboto; sourceTree = "<group>"; };
+		44F1F7B122F7EE53006F8778 /* SearchUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserViewController.swift; sourceTree = "<group>"; };
 		44FEB36720CB378100752B79 /* DashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		44FEB36920CB3D6A00752B79 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		44FEB36B20CB434600752B79 /* AnnotationPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationPin.swift; sourceTree = "<group>"; };
@@ -178,6 +190,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		443AA4DE22F74C5100A0ED23 /* Team View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				44AA4DAA22F74DBF00DC29A5 /* ChangeTeamTagVC.swift */,
+			);
+			path = "Team View Controllers";
+			sourceTree = "<group>";
+		};
 		4497E5E920F464BA00639101 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,11 +217,12 @@
 				4497E5F120F46C8600639101 /* ChatLogControllerProgrammatically.swift */,
 				4497E5F320F46CD500639101 /* ChatLogControllerCell.swift */,
 				4477D36C22017E3B0028A8F2 /* ChatLogController.swift */,
+				441F41AF20EEC68C008054E1 /* MessagesTableVC.swift */,
 			);
 			path = Messages;
 			sourceTree = "<group>";
 		};
-		44A6502E21EAFAE8009385E1 /* fonts */ = {
+		44A6502E21EAFAE8009385E1 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
 				44A6503621EAFAFC009385E1 /* Roboto-Black.ttf */,
@@ -245,31 +266,58 @@
 				44C026D022F0463A00A1A99C /* OpenSans-SemiBold.ttf */,
 				44C026CC22F0463A00A1A99C /* OpenSans-SemiBoldItalic.ttf */,
 			);
-			path = fonts;
+			path = Fonts;
 			sourceTree = "<group>";
 		};
-		44A6505121EC68FD009385E1 /* cards */ = {
+		44A6505121EC68FD009385E1 /* Cards */ = {
 			isa = PBXGroup;
 			children = (
 				44A6505A21EC7399009385E1 /* CardViewController.swift */,
 				44A6505B21EC7399009385E1 /* CardViewController.xib */,
 			);
-			path = cards;
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		44AD3E5822F5B11A008A8BFB /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				44AD3E5222F59FB0008A8BFB /* MainTabBarViewController.swift */,
+			);
+			name = TabBar;
+			path = Login/TabBar;
+			sourceTree = "<group>";
+		};
+		44AD3E5922F5B1E7008A8BFB /* Profile View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4439F26921B24049007D8032 /* EditProfileViewController.swift */,
+			);
+			path = "Profile View Controllers";
+			sourceTree = "<group>";
+		};
+		44AD3E5B22F5B2C7008A8BFB /* Profile View Conrollers */ = {
+			isa = PBXGroup;
+			children = (
+				44AD3E5C22F5B6D6008A8BFB /* ProfileViewController.swift */,
+			);
+			path = "Profile View Conrollers";
 			sourceTree = "<group>";
 		};
 		44C57BEC20B8DE8700DB82D7 = {
 			isa = PBXGroup;
 			children = (
-				44A6505121EC68FD009385E1 /* cards */,
-				44A6502E21EAFAE8009385E1 /* fonts */,
+				44C57BF720B8DE8700DB82D7 /* YogaFit */,
+				44C57C0E20B8E9E500DB82D7 /* Controllers */,
+				44A6505121EC68FD009385E1 /* Cards */,
+				44A6502E21EAFAE8009385E1 /* Fonts */,
 				4497E5E920F464BA00639101 /* Objects */,
 				44C57C0F20B8EFC200DB82D7 /* Helpers */,
 				44E94CF821993DF100D5892F /* Roboto */,
-				44C57BF720B8DE8700DB82D7 /* YogaFit */,
 				44D5C2D921FFA204008B3FF1 /* RedesignMessages */,
 				4497E5EC20F4660A00639101 /* Messages */,
+				44AD3E5822F5B11A008A8BFB /* TabBar */,
 				44FD3BF4210062290087F671 /* Login */,
-				44C57C0E20B8E9E500DB82D7 /* Controllers */,
+				44AD3E5922F5B1E7008A8BFB /* Profile View Controllers */,
 				44C57BF620B8DE8700DB82D7 /* Products */,
 				99FAF9DFF30507A7CE4A932C /* Pods */,
 				DB30A3C4B99C814937A525C3 /* Frameworks */,
@@ -302,12 +350,13 @@
 		44C57C0E20B8E9E500DB82D7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4482503522F3FC1300D7B00E /* ProfileViewController.swift */,
-				441F41AF20EEC68C008054E1 /* MessagesTableVC.swift */,
+				44AD3E5B22F5B2C7008A8BFB /* Profile View Conrollers */,
+				443AA4DE22F74C5100A0ED23 /* Team View Controllers */,
+				443AA4DC22F6993500A0ED23 /* SettingsTeamViewController.swift */,
+				44AD3E5622F5B089008A8BFB /* TeamDashboardViewController.swift */,
 				44FEB36720CB378100752B79 /* DashboardController.swift */,
 				441F41A520EDB5F8008054E1 /* View.xib */,
-				441F41A720EDBA32008054E1 /* CustomMKPinAnnotationView.swift */,
-				4439F26921B24049007D8032 /* EditProfileViewController.swift */,
+				44F1F7B122F7EE53006F8778 /* SearchUserViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -315,6 +364,7 @@
 		44C57C0F20B8EFC200DB82D7 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				441F41A720EDBA32008054E1 /* CustomMKPinAnnotationView.swift */,
 				441F41AD20EEC2D4008054E1 /* CircularTransition.swift */,
 				44C57C1020B8EFD800DB82D7 /* Extension.swift */,
 				4490DB8E21F92B3A006112F2 /* CheckInternet.swift */,
@@ -337,6 +387,7 @@
 				44C2F39B22F0631100ABF6F9 /* FirstRegisterController.swift */,
 				44C57C0C20B8E92E00DB82D7 /* LoginController.swift */,
 				44C57C1220B8F00A00DB82D7 /* RegisterController.swift */,
+				44AD3E5422F5ABDE008A8BFB /* FirstAnimationViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -546,11 +597,15 @@
 			files = (
 				4497E5EE20F4664C00639101 /* ProfileTableView.swift in Sources */,
 				44FEB36C20CB434600752B79 /* AnnotationPin.swift in Sources */,
+				44AD3E5722F5B089008A8BFB /* TeamDashboardViewController.swift in Sources */,
 				441F41AE20EEC2D4008054E1 /* CircularTransition.swift in Sources */,
+				443AA4DD22F6993500A0ED23 /* SettingsTeamViewController.swift in Sources */,
 				44C57C1320B8F00A00DB82D7 /* RegisterController.swift in Sources */,
 				4490DB8F21F92B3A006112F2 /* CheckInternet.swift in Sources */,
+				44F1F7B222F7EE53006F8778 /* SearchUserViewController.swift in Sources */,
+				44AA4DAB22F74DBF00DC29A5 /* ChangeTeamTagVC.swift in Sources */,
+				44AD3E5322F59FB0008A8BFB /* MainTabBarViewController.swift in Sources */,
 				44C2F39C22F0631200ABF6F9 /* FirstRegisterController.swift in Sources */,
-				4482503622F3FC1300D7B00E /* ProfileViewController.swift in Sources */,
 				441F41A820EDBA32008054E1 /* CustomMKPinAnnotationView.swift in Sources */,
 				44D5C2DB21FFA26E008B3FF1 /* NewTableViewCell.swift in Sources */,
 				44C57C1120B8EFD800DB82D7 /* Extension.swift in Sources */,
@@ -560,11 +615,13 @@
 				44FEB36A20CB3D6A00752B79 /* Point.swift in Sources */,
 				44D5C2DD21FFA473008B3FF1 /* NewProfileTableViewVC.swift in Sources */,
 				441F41B020EEC68C008054E1 /* MessagesTableVC.swift in Sources */,
+				44AD3E5D22F5B6D7008A8BFB /* ProfileViewController.swift in Sources */,
 				44FEB36820CB378100752B79 /* DashboardController.swift in Sources */,
 				4497E5EB20F464E800639101 /* Message.swift in Sources */,
 				4477D36D22017E3B0028A8F2 /* ChatLogController.swift in Sources */,
 				4497E5F420F46CD500639101 /* ChatLogControllerCell.swift in Sources */,
 				44A6505C21EC7399009385E1 /* CardViewController.swift in Sources */,
+				44AD3E5522F5ABDE008A8BFB /* FirstAnimationViewController.swift in Sources */,
 				4497E5F220F46C8600639101 /* ChatLogControllerProgrammatically.swift in Sources */,
 				44C57C0D20B8E92E00DB82D7 /* LoginController.swift in Sources */,
 				4497E5E820F4522B00639101 /* User.swift in Sources */,

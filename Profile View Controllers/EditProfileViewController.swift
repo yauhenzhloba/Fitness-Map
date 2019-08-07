@@ -21,18 +21,22 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var townField: UITextField!
     @IBOutlet weak var bioField: UITextView!
     
+    @IBOutlet weak var usernameCodeField: UITextField!
+    
     @IBOutlet weak var logOutButtonOutlet: UIButton!
     
     
     
     //"username": username, "email": email, "profileImageUrl": profileImageUrl, "sex": "0", "town": "0", "bio": "0"
-    var userName = "empty"
-    var email = "empty"
-    var profileImageUrl = "empty"
-    var sex = "empty"
-    var town = "empty"
-    var bio = "empty"
+    var userName = ""
+    var email = ""
+    var profileImageUrl = ""
+    var sex = ""
+    var town = ""
+    var bio = ""
     var newImage = 0
+    var usernameCode = ""
+    var saveOldUserNameCodeForDelete = ""
     override func viewDidLoad() {
 
         super.viewDidLoad()
@@ -95,9 +99,11 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         
         ref.child("users").child(self.uid!).observeSingleEvent(of: .value, with: { (snapshot) in
             
-            let value = snapshot.value as? NSDictionary
-            self.userName = (value?["username"] as? String)!
-            if let checkUrl = (value?["profileImageUrl"] as? String)
+            guard let value = snapshot.value as? NSDictionary else { return }
+            self.userName = (value["username"] as? String)!
+            
+            
+            if let checkUrl = (value["profileImageUrl"] as? String)
                 {
                     self.profileImageUrl = checkUrl
                     self.profileImageView.loadImageUsingCatchWithUrlString(urlString: self.profileImageUrl)
@@ -105,16 +111,22 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
                 self.profileImageView.image = UIImage(named: "DefaultProfileImage")
             }
             
-            self.email = (value?["email"] as? String)!
-            self.sex = (value?["sex"] as? String)!
-            self.town = (value?["town"] as? String)!
-            self.bio = (value?["bio"] as? String)!
+            self.email = (value["email"] as? String)!
+            self.sex = (value["sex"] as? String)!
+            self.town = (value["town"] as? String)!
+            self.bio = (value["bio"] as? String)!
+            
+            if let checkUsernameCode = value["usernameCode"] as? String {
+                self.usernameCode = checkUsernameCode
+                self.saveOldUserNameCodeForDelete = checkUsernameCode
+            }
             
             DispatchQueue.main.async {
                 self.profileImageView.loadImageUsingCatchWithUrlString(urlString: self.profileImageUrl)
                 self.townField.text = self.town
                 self.bioField.text = self.bio
                 self.userNameTextField.text = self.userName
+                self.usernameCodeField.text = self.usernameCode
                 
     
                 if self.sex == "Male" {
@@ -126,7 +138,9 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
                     self.sexSegmented.selectedSegmentIndex = 0
                 }
                 
-            }
+                }
+            
+            
             
         }) { (error) in
             print(error.localizedDescription)
@@ -138,6 +152,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         self.userName = self.userNameTextField.text!
         self.town = self.townField.text!
         self.bio = self.bioField.text!
+        self.usernameCode = self.usernameCodeField.text!
         
         let getIndex = sexSegmented.selectedSegmentIndex
         if getIndex == 0 {
@@ -148,7 +163,21 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         }
   
         
-        Database.database().reference().child("users").child(self.uid!).setValue(["username": self.userName, "email": self.email, "profileImageUrl":  self.profileImageUrl, "sex": self.sex, "town": self.town, "bio": self.bio])
+        if self.saveOldUserNameCodeForDelete == self.usernameCode {
+            
+            Database.database().reference().child("users").child(self.uid!).updateChildValues(["username": self.userName, "email": self.email, "sex": self.sex, "town": self.town, "bio": self.bio, "usernameCode": self.saveOldUserNameCodeForDelete])
+            
+            //just update
+            
+            
+        }else{
+            Database.database().reference().child("users").child(self.uid!).updateChildValues(["username": self.userName, "email": self.email, "sex": self.sex, "town": self.town, "bio": self.bio, "usernameCode": self.usernameCode.lowercased()])
+            
+            //just delete
+            Database.database().reference().child("usernames").child(self.usernameCode.lowercased()).setValue(["user": self.uid!])
+            Database.database().reference().child("usernames").child(self.saveOldUserNameCodeForDelete).removeValue()
+            
+        }
         
         let alertController = UIAlertController(title: "Saved", message: "Sucsessful", preferredStyle: .alert)
         
@@ -191,6 +220,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         self.userName = self.userNameTextField.text!
         self.town = self.townField.text!
         self.bio = self.bioField.text!
+        self.usernameCode = self.usernameCodeField.text!
         
         let getIndex = sexSegmented.selectedSegmentIndex
         if getIndex == 0 {
@@ -215,7 +245,25 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
                             // Uh-oh, an error occurred!
                             return
                         }
-                            Database.database().reference().child("users").child(self.uid!).setValue(["username": self.userName, "email": self.email, "profileImageUrl":  profileNewImageUrl, "sex": self.sex, "town": self.town, "bio": self.bio])
+                        
+                        if self.saveOldUserNameCodeForDelete == self.usernameCode {
+                            Database.database().reference().child("users").child(self.uid!).updateChildValues(["username": self.userName, "email": self.email, "profileImageUrl":  profileNewImageUrl.absoluteString, "sex": self.sex, "town": self.town, "bio": self.bio, "usernameCode": self.saveOldUserNameCodeForDelete])
+                            
+                                //just update
+                            
+                            
+                        }else{
+                            Database.database().reference().child("users").child(self.uid!).updateChildValues(["username": self.userName, "email": self.email, "profileImageUrl":  profileNewImageUrl.absoluteString, "sex": self.sex, "town": self.town, "bio": self.bio, "usernameCode": self.usernameCode.lowercased()])
+                            
+                                //just delete
+                            Database.database().reference().child("usernames").child(self.usernameCode.lowercased()).setValue(["user": self.uid!])
+                            Database.database().reference().child("usernames").child(self.saveOldUserNameCodeForDelete).removeValue()
+                            
+                        }
+                        
+            //                        Database.database().reference().child("users").child(self.uid!).updateChildValues(["username": self.userName, "email": self.email, "profileImageUrl":  profileNewImageUrl.absoluteString, "sex": self.sex, "town": self.town, "bio": self.bio, "usernameCode": self.usernameCode.lowercased()])
+                        
+                        //Database.database().reference().child("usernames").child(newUsernameCode!).updateChildValues(["user": uid])
                         }
                     
 //                    if let profileNewImageUrl = metadata?.absoluteString {

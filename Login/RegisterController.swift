@@ -286,6 +286,9 @@ class RegisterController: UIViewController, UIImagePickerControllerDelegate, UIN
                         let ref = Database.database().reference()
                         ref.child("users").child(uid).setValue(values)
                         
+                        Database.database().reference().child("usernames").child(uid).child(usernameId.lowercased()).setValue(["1":"1"])
+                        
+                        
                         //отправить первое сообщение для пользователя после регистрации
                         
                         let toId = uid
