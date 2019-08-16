@@ -158,6 +158,13 @@ class SettingsTeamViewController: UIViewController, UIImagePickerControllerDeleg
         }
         
         if let selectedImage = selectedImageFromPicker{
+            
+//            if imagePicked == 1 {
+//                imageView1.image = pickedImage
+//            } else if imagePicked == 2 {
+//                imageView2.image = pickedImage
+//            }
+            
             self.teamImageView.image = selectedImage
             //self.newImage = 1
         }
@@ -207,7 +214,7 @@ class SettingsTeamViewController: UIViewController, UIImagePickerControllerDeleg
         
         
         let imageName = NSUUID().uuidString
-        let storageRef = Storage.storage().reference().child("profile_images").child("\(imageName).png")
+        let storageRef = Storage.storage().reference().child("team_images").child("\(imageName).png")
         
         if let uploadData = UIImagePNGRepresentation(self.teamImageView.image!) {
             storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in

@@ -128,7 +128,19 @@ class ChangeTeamTagVC: UIViewController {
         //receiverViewController.takeTeamTag = sendTeamTag
     }
     
-
+    @IBAction func saveTag(_ sender: Any) {
+        
+        guard let vc: SettingsTeamViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "settingsTeamViewController") as? SettingsTeamViewController else {
+            
+            print("View controller could not be instantiated")
+            return
+        }
+        vc.takeTeamTag = self.sendTeamTag
+        //self.navigationController?.pushViewController(vc, animated: true)
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
     @IBAction func sendButton(_ sender: Any) {
         
         guard let vc: SettingsTeamViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "settingsTeamViewController") as? SettingsTeamViewController else {
@@ -137,8 +149,8 @@ class ChangeTeamTagVC: UIViewController {
             return
         }
         vc.takeTeamTag = self.sendTeamTag
-        self.navigationController?.pushViewController(vc, animated: true)
-        
+        //self.navigationController?.pushViewController(vc, animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     
     

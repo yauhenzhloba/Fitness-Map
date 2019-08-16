@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseMessaging
 import UserNotifications
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
@@ -56,9 +57,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         /// Override point for customization after application launch.
+        //UITabBar.appearance().tintColor = UIColor.white
+        GMSPlacesClient.provideAPIKey("AIzaSyBp0qtz5Sp6j0p7kNRg5PaN8rYtveYz8Iw")
         
-        
-
+//        UINavigationBar.appearance().barTintColor = UIColor.white
+//        UINavigationBar.appearance().tintColor = UIColor.black
+//        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.black]
+//        
+        // AIzaSyBp0qtz5Sp6j0p7kNRg5PaN8rYtveYz8Iw
+        // AIzaSyDfGMBIG6WvdZKUirb8aKz1SGNxvWA-J3Ida
+        //UIApplication.shared.statusBarView?.backgroundColor = .red
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)
             UNUserNotificationCenter.current().delegate = self
@@ -189,6 +197,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 //    }
 
 }
+
+extension UIApplication {
+    var statusBarView: UIView? {
+        if responds(to: Selector("statusBar")) {
+            return value(forKey: "statusBar") as? UIView
+        }
+        return nil
+    }
+}
+
+
 
 
 //@available(iOS 10, *)

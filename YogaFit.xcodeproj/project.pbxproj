@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4410153123040DE6001ECCE6 /* ChooseExperienceLevel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4410153023040DE6001ECCE6 /* ChooseExperienceLevel.xib */; };
+		4410153323040DF6001ECCE6 /* ChooseExperienceLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4410153223040DF6001ECCE6 /* ChooseExperienceLevel.swift */; };
+		4410153723042F1E001ECCE6 /* ChangeUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4410153623042F1E001ECCE6 /* ChangeUsernameViewController.swift */; };
+		4415CE7322FC325A0054DB30 /* CreateClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4415CE7222FC325A0054DB30 /* CreateClassViewController.swift */; };
+		4415CE7522FC49120054DB30 /* UserClubInterfaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4415CE7422FC49120054DB30 /* UserClubInterfaceViewController.swift */; };
+		4415CE7722FC4E000054DB30 /* ManageClubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4415CE7622FC4E000054DB30 /* ManageClubViewController.swift */; };
 		441F41A620EDB5F8008054E1 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 441F41A520EDB5F8008054E1 /* View.xib */; };
 		441F41A820EDBA32008054E1 /* CustomMKPinAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F41A720EDBA32008054E1 /* CustomMKPinAnnotationView.swift */; };
 		441F41AE20EEC2D4008054E1 /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F41AD20EEC2D4008054E1 /* CircularTransition.swift */; };
@@ -14,6 +20,8 @@
 		4439F26A21B24049007D8032 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4439F26921B24049007D8032 /* EditProfileViewController.swift */; };
 		443AA4DD22F6993500A0ED23 /* SettingsTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443AA4DC22F6993500A0ED23 /* SettingsTeamViewController.swift */; };
 		444C0C0521C8895300360ABC /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 444C0C0421C8895200360ABC /* AdSupport.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		4459F23722FC2FAA00CEDEFA /* ChooseTagView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4459F23622FC2FAA00CEDEFA /* ChooseTagView.xib */; };
+		4459F23922FC2FC800CEDEFA /* ChooseTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4459F23822FC2FC800CEDEFA /* ChooseTagView.swift */; };
 		4477D36D22017E3B0028A8F2 /* ChatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4477D36C22017E3B0028A8F2 /* ChatLogController.swift */; };
 		4490DB8F21F92B3A006112F2 /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4490DB8E21F92B3A006112F2 /* CheckInternet.swift */; };
 		4497E5E820F4522B00639101 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4497E5E720F4522B00639101 /* User.swift */; };
@@ -91,6 +99,12 @@
 
 /* Begin PBXFileReference section */
 		12C2B966AAB29227879C052A /* Pods-YogaFit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YogaFit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YogaFit/Pods-YogaFit.debug.xcconfig"; sourceTree = "<group>"; };
+		4410153023040DE6001ECCE6 /* ChooseExperienceLevel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseExperienceLevel.xib; sourceTree = "<group>"; };
+		4410153223040DF6001ECCE6 /* ChooseExperienceLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseExperienceLevel.swift; sourceTree = "<group>"; };
+		4410153623042F1E001ECCE6 /* ChangeUsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUsernameViewController.swift; sourceTree = "<group>"; };
+		4415CE7222FC325A0054DB30 /* CreateClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClassViewController.swift; sourceTree = "<group>"; };
+		4415CE7422FC49120054DB30 /* UserClubInterfaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserClubInterfaceViewController.swift; sourceTree = "<group>"; };
+		4415CE7622FC4E000054DB30 /* ManageClubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageClubViewController.swift; sourceTree = "<group>"; };
 		441F41A520EDB5F8008054E1 /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		441F41A720EDBA32008054E1 /* CustomMKPinAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMKPinAnnotationView.swift; sourceTree = "<group>"; };
 		441F41AD20EEC2D4008054E1 /* CircularTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
@@ -98,6 +112,8 @@
 		4439F26921B24049007D8032 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		443AA4DC22F6993500A0ED23 /* SettingsTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTeamViewController.swift; sourceTree = "<group>"; };
 		444C0C0421C8895200360ABC /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		4459F23622FC2FAA00CEDEFA /* ChooseTagView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTagView.xib; sourceTree = "<group>"; };
+		4459F23822FC2FC800CEDEFA /* ChooseTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTagView.swift; sourceTree = "<group>"; };
 		4477D36C22017E3B0028A8F2 /* ChatLogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogController.swift; sourceTree = "<group>"; };
 		4490DB8E21F92B3A006112F2 /* CheckInternet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternet.swift; sourceTree = "<group>"; };
 		4497E5E720F4522B00639101 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -193,9 +209,33 @@
 		443AA4DE22F74C5100A0ED23 /* Team View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				44AD3E5622F5B089008A8BFB /* TeamDashboardViewController.swift */,
+				443AA4DC22F6993500A0ED23 /* SettingsTeamViewController.swift */,
 				44AA4DAA22F74DBF00DC29A5 /* ChangeTeamTagVC.swift */,
+				44F1F7B122F7EE53006F8778 /* SearchUserViewController.swift */,
 			);
 			path = "Team View Controllers";
+			sourceTree = "<group>";
+		};
+		4459F23522FC28F500CEDEFA /* xib Views */ = {
+			isa = PBXGroup;
+			children = (
+				4459F23622FC2FAA00CEDEFA /* ChooseTagView.xib */,
+				4459F23822FC2FC800CEDEFA /* ChooseTagView.swift */,
+				4410153023040DE6001ECCE6 /* ChooseExperienceLevel.xib */,
+				4410153223040DF6001ECCE6 /* ChooseExperienceLevel.swift */,
+			);
+			path = "xib Views";
+			sourceTree = "<group>";
+		};
+		4459F23A22FC31B000CEDEFA /* Clab and Class */ = {
+			isa = PBXGroup;
+			children = (
+				4415CE7222FC325A0054DB30 /* CreateClassViewController.swift */,
+				4415CE7422FC49120054DB30 /* UserClubInterfaceViewController.swift */,
+				4415CE7622FC4E000054DB30 /* ManageClubViewController.swift */,
+			);
+			path = "Clab and Class";
 			sourceTree = "<group>";
 		};
 		4497E5E920F464BA00639101 /* Objects */ = {
@@ -290,7 +330,6 @@
 		44AD3E5922F5B1E7008A8BFB /* Profile View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4439F26921B24049007D8032 /* EditProfileViewController.swift */,
 			);
 			path = "Profile View Controllers";
 			sourceTree = "<group>";
@@ -298,7 +337,9 @@
 		44AD3E5B22F5B2C7008A8BFB /* Profile View Conrollers */ = {
 			isa = PBXGroup;
 			children = (
+				4439F26921B24049007D8032 /* EditProfileViewController.swift */,
 				44AD3E5C22F5B6D6008A8BFB /* ProfileViewController.swift */,
+				4410153623042F1E001ECCE6 /* ChangeUsernameViewController.swift */,
 			);
 			path = "Profile View Conrollers";
 			sourceTree = "<group>";
@@ -308,6 +349,7 @@
 			children = (
 				44C57BF720B8DE8700DB82D7 /* YogaFit */,
 				44C57C0E20B8E9E500DB82D7 /* Controllers */,
+				4459F23522FC28F500CEDEFA /* xib Views */,
 				44A6505121EC68FD009385E1 /* Cards */,
 				44A6502E21EAFAE8009385E1 /* Fonts */,
 				4497E5E920F464BA00639101 /* Objects */,
@@ -350,13 +392,11 @@
 		44C57C0E20B8E9E500DB82D7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				44FEB36720CB378100752B79 /* DashboardController.swift */,
 				44AD3E5B22F5B2C7008A8BFB /* Profile View Conrollers */,
 				443AA4DE22F74C5100A0ED23 /* Team View Controllers */,
-				443AA4DC22F6993500A0ED23 /* SettingsTeamViewController.swift */,
-				44AD3E5622F5B089008A8BFB /* TeamDashboardViewController.swift */,
-				44FEB36720CB378100752B79 /* DashboardController.swift */,
+				4459F23A22FC31B000CEDEFA /* Clab and Class */,
 				441F41A520EDB5F8008054E1 /* View.xib */,
-				44F1F7B122F7EE53006F8778 /* SearchUserViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -422,6 +462,7 @@
 				44C57BF220B8DE8700DB82D7 /* Frameworks */,
 				44C57BF320B8DE8700DB82D7 /* Resources */,
 				3E626948D966DFB2511993B7 /* [CP] Embed Pods Frameworks */,
+				29D43075C35711FB314F1C26 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -489,6 +530,7 @@
 				44C026E822F0465400A1A99C /* OpenSans-ExtraBold.ttf in Resources */,
 				44C026E422F0465400A1A99C /* Montserrat-Thin.ttf in Resources */,
 				449B78E122B5EA7100CDF563 /* GoogleService-Info.plist in Resources */,
+				4410153123040DE6001ECCE6 /* ChooseExperienceLevel.xib in Resources */,
 				44C026DC22F0465400A1A99C /* Montserrat-Light.ttf in Resources */,
 				44A6503B21EAFAFC009385E1 /* Roboto-Medium.ttf in Resources */,
 				44C026DE22F0465400A1A99C /* Montserrat-Medium.ttf in Resources */,
@@ -526,6 +568,7 @@
 				44C026D822F0465400A1A99C /* Montserrat-ExtraBold.ttf in Resources */,
 				44C026EB22F0465400A1A99C /* OpenSans-LightItalic.ttf in Resources */,
 				44A6504521EAFAFC009385E1 /* Roboto-LightItalic.ttf in Resources */,
+				4459F23722FC2FAA00CEDEFA /* ChooseTagView.xib in Resources */,
 				44A6503C21EAFAFC009385E1 /* Roboto-Regular.ttf in Resources */,
 				44C57BFE20B8DE8700DB82D7 /* Main.storyboard in Resources */,
 				44E94CF721993C5D00D5892F /* Montserrat in Resources */,
@@ -536,6 +579,30 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		29D43075C35711FB314F1C26 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YogaFit/Pods-YogaFit-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YogaFit/Pods-YogaFit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3E626948D966DFB2511993B7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 12;
@@ -598,22 +665,27 @@
 				4497E5EE20F4664C00639101 /* ProfileTableView.swift in Sources */,
 				44FEB36C20CB434600752B79 /* AnnotationPin.swift in Sources */,
 				44AD3E5722F5B089008A8BFB /* TeamDashboardViewController.swift in Sources */,
+				4415CE7322FC325A0054DB30 /* CreateClassViewController.swift in Sources */,
 				441F41AE20EEC2D4008054E1 /* CircularTransition.swift in Sources */,
 				443AA4DD22F6993500A0ED23 /* SettingsTeamViewController.swift in Sources */,
 				44C57C1320B8F00A00DB82D7 /* RegisterController.swift in Sources */,
 				4490DB8F21F92B3A006112F2 /* CheckInternet.swift in Sources */,
 				44F1F7B222F7EE53006F8778 /* SearchUserViewController.swift in Sources */,
+				4415CE7722FC4E000054DB30 /* ManageClubViewController.swift in Sources */,
 				44AA4DAB22F74DBF00DC29A5 /* ChangeTeamTagVC.swift in Sources */,
 				44AD3E5322F59FB0008A8BFB /* MainTabBarViewController.swift in Sources */,
 				44C2F39C22F0631200ABF6F9 /* FirstRegisterController.swift in Sources */,
+				4415CE7522FC49120054DB30 /* UserClubInterfaceViewController.swift in Sources */,
 				441F41A820EDBA32008054E1 /* CustomMKPinAnnotationView.swift in Sources */,
 				44D5C2DB21FFA26E008B3FF1 /* NewTableViewCell.swift in Sources */,
 				44C57C1120B8EFD800DB82D7 /* Extension.swift in Sources */,
+				4410153323040DF6001ECCE6 /* ChooseExperienceLevel.swift in Sources */,
 				4497E5F020F4671F00639101 /* TableViewCellForObserveMsg.swift in Sources */,
 				4439F26A21B24049007D8032 /* EditProfileViewController.swift in Sources */,
 				44C57BF920B8DE8700DB82D7 /* AppDelegate.swift in Sources */,
 				44FEB36A20CB3D6A00752B79 /* Point.swift in Sources */,
 				44D5C2DD21FFA473008B3FF1 /* NewProfileTableViewVC.swift in Sources */,
+				4459F23922FC2FC800CEDEFA /* ChooseTagView.swift in Sources */,
 				441F41B020EEC68C008054E1 /* MessagesTableVC.swift in Sources */,
 				44AD3E5D22F5B6D7008A8BFB /* ProfileViewController.swift in Sources */,
 				44FEB36820CB378100752B79 /* DashboardController.swift in Sources */,
@@ -624,6 +696,7 @@
 				44AD3E5522F5ABDE008A8BFB /* FirstAnimationViewController.swift in Sources */,
 				4497E5F220F46C8600639101 /* ChatLogControllerProgrammatically.swift in Sources */,
 				44C57C0D20B8E92E00DB82D7 /* LoginController.swift in Sources */,
+				4410153723042F1E001ECCE6 /* ChangeUsernameViewController.swift in Sources */,
 				4497E5E820F4522B00639101 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

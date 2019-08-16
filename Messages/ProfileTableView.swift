@@ -25,26 +25,31 @@ class ProfileTableView: UITableViewController {
         
         
         self.observeUserMessages()
-        self.gradientForNavigationBar()
+
         
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "Open Sans", size: 17)!]
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+
         
     }
 //    override var preferredStatusBarStyle: UIStatusBarStyle {
 //        return .lightContent
 //    }
-    func gradientForNavigationBar(){
-        navigationController?.navigationBar.barTintColor = UIColor( red: CGFloat(66/255.0), green: CGFloat(45/255.0), blue: CGFloat(255/255.0), alpha: CGFloat(1.0) )
 
-//        let layer = CAGradientLayer()
-//        layer.frame = navigationController!.navigationBar.bounds
-//        layer.colors = [UIColor( red: CGFloat(66/255.0), green: CGFloat(45/255.0), blue: CGFloat(255/255.0), alpha: CGFloat(1.0) ).cgColor, UIColor( red: CGFloat(115/255.0), green: CGFloat(87/255.0), blue: CGFloat(250/255.0), alpha: CGFloat(1.0) ).cgColor]
-//        layer.startPoint = CGPoint(x: 0.0,y: 1.0)
-//        layer.endPoint = CGPoint(x: 1.0,y: 0.0)
-//        navigationController?.navigationBar.layer.addSublayer(layer)
-       
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+                self.navigationController?.navigationBar.prefersLargeTitles = true
+                self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "Open Sans", size: 17)!]
+                //self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
+                self.navigationController?.navigationBar.barTintColor = UIColor.white
+        
+//        UINavigationBar.appearance().barTintColor = UIColor(red: 234.0/255.0, green: 46.0/255.0, blue: 73.0/255.0, alpha: 1.0)
+//        UINavigationBar.appearance().tintColor = UIColor.white
+//        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        
+        
+        
     }
+    
     
     func observeUserMessages() {
         print("observeUserMessages")

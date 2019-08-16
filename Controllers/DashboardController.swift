@@ -361,6 +361,7 @@ class DashboardController: UIViewController, MKMapViewDelegate, CLLocationManage
     
     override func viewWillAppear(_ animated: Bool) {
         self.updateUserVisit()
+        UIApplication.shared.statusBarView?.backgroundColor = .clear
     }
     
     func updateUserVisit(){
@@ -961,19 +962,15 @@ class DashboardController: UIViewController, MKMapViewDelegate, CLLocationManage
         locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
     }
     
-    @IBOutlet weak var viewStatusBarShadow: UIView!
-    
-    @IBOutlet weak var viewStatusBarGradient: UIView!
-    
     @IBOutlet weak var gradientViewForProfileView: UIView!
     
     func setGradientForViews(){
         
-        self.viewStatusBarShadow.layer.shadowColor = UIColor.black.cgColor
-        self.viewStatusBarShadow.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
-        self.viewStatusBarShadow.layer.shadowOpacity = 0.5
-        self.viewStatusBarShadow.layer.shadowRadius = 5.0
-        self.viewStatusBarShadow.layer.cornerRadius = 3
+//        self.viewStatusBarShadow.layer.shadowColor = UIColor.black.cgColor
+//        self.viewStatusBarShadow.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
+//        self.viewStatusBarShadow.layer.shadowOpacity = 0.5
+//        self.viewStatusBarShadow.layer.shadowRadius = 5.0
+//        self.viewStatusBarShadow.layer.cornerRadius = 3
         
 //        let layer0 = CAGradientLayer()
 //        layer0.frame = viewStatusBarGradient.bounds
